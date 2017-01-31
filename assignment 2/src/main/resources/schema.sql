@@ -8,26 +8,3 @@ CREATE TABLE USERS
     PRIMARY KEY (id)
 );
 
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-INSERT INTO USERS (firstname, lastname) VALUES ('Cardinal','Erichsen');
-
-
-
