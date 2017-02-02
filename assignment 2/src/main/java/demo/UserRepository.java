@@ -30,7 +30,7 @@ public class UserRepository {
         }
 
         int start = (int)((page - 1) * userperpage);
-        List<User> userList = this.jdbcTemplate.query("SELECT * FROM USERS LIMIT ?, ?", new Object[]{start, userperpage}, new UserRowMapper());
+        List<User> userList = this.jdbcTemplate.query("SELECT id, firstname, lastname FROM USERS LIMIT ?, ?", new Object[]{start, userperpage}, new UserRowMapper());
 
         return userList;
     }
