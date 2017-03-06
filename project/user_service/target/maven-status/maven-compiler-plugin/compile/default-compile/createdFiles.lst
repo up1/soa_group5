@@ -1,0 +1,8 @@
+UserNotFoundException.class
+config\DatabaseConfiguration.class
+UserRowMapper.class
+UserLoginFailedException.class
+User.class
+UserController.class
+UserRepository.class
+UserServiceApplication.class
