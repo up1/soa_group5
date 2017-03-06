@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+	<style type="text/css">
+      		body {font-family: 'Kanit';}
+	  </style>
+	<title th:text="${tests.name_en}">Test</title>
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+<nav>
+	<div class="white nav-wrapper">
+		<ul id="nav-mobile" class="right">
+			<li><a href="sass.html"><span class="black-text">Home</span></a></li>
+			<li><a href="sass.html"><span class="black-text">Movie</span></a></li>
+			<li><a href="sass.html"><span class="black-text">Register</span></a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="col-md-12">
+	<img class="responsive-img" th:src="${tests.cover}"/>
+</div>
+
+<div class="container">
+	<div class="card row">
+		<div class="col s4">
+			<img class="responsive-img" width="300" th:src="${tests.poster}"/>
+		</div>
+		<!-- movietitle -->
+		<div class="col s8">
+			<div class="white darken-1">
+				<div class="card-content black-text">
+					<span class="card-title" th:text="${tests.name_en}">Logan</span>
+					<span class="card-title" th:text="${tests.name_th}">โลแกน เดอะ วูล์ฟเวอรีน</span><hr/>
+
+					<span><b>เรื่องย่อ</b></span><br/>
+					<span th:text="${tests.description}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="card-content black-text">
+					<div class="col s8">
+						<span th:text="${'Release date : ' + tests.release_date}">Release date : 02 มีนาคม 2560</span><br/>
+						<span th:text="${'Length : ' + tests.duration}">Length : 137 นาที</span>
+					</div>
+					<div class="col s4">
+						<button class="waves-effect waves-light btn red">Show Time</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row center">
+		<iframe width="639" height="360" th:src="${ tests.trailer }" frameborder="0" allowfullscreen=""></iframe>
+	</div>
+</div>
+
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">Footer Content</h5>
+				<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+			</div>
+			<div class="col l4 offset-l2 s12">
+				<h5 class="white-text">Links</h5>
+				<ul>
+					<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2014 Copyright Text
+			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
