@@ -11,6 +11,7 @@ public class Movie {
     private String trailer;
     private int duration;
     private String status;
+    private String cover;
 
 
     public Movie() {
@@ -87,5 +88,13 @@ public class Movie {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 }
