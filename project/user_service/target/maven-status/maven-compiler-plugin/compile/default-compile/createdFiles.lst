@@ -1,8 +1,8 @@
-UserNotFoundException.class
-config\DatabaseConfiguration.class
-UserRowMapper.class
-UserLoginFailedException.class
-User.class
-UserController.class
-UserRepository.class
-UserServiceApplication.class
+demo\config\DatabaseConfiguration.class
+demo\UserNotFoundException.class
+demo\UserRowMapper.class
+demo\User.class
+demo\UserServiceApplication.class
+demo\UserRepository.class
+demo\UserLoginFailedException.class
+demo\UserController.class

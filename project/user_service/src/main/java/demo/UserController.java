@@ -19,9 +19,9 @@ public class UserController {
 //        return this.userRepository.findById();
 //    }
 
-    @RequestMapping("/user")
-    public User authorizeUser(@RequestParam(value="username", defaultValue = "caliver") String username,
-                              @RequestParam(value="password", defaultValue = "banned") String password) {
+    @RequestMapping("/login")
+    public User authorizeUser(@RequestParam(value="username") String username,
+                              @RequestParam(value="password") String password) {
         return this.userRepository.userLogin(username, password);
     }
 }

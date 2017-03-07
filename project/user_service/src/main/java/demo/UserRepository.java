@@ -19,10 +19,6 @@ public class UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-//    public UserRepository(JdbcTemplate jdbcTemplate) {
-//        this.jdbcTemplate = jdbcTemplate;
-//    }
-
     @Transactional(readOnly = true)
 //    public User findById(Long id) {
 //        try {
@@ -79,11 +75,5 @@ public class UserRepository {
 //                user.getUser_id(),
 //                user.getFirstname(),
 //                user.getLastname());
-//    }
-//
-//    @Transactional
-//    public void delete(Long id) {
-//        String sql = "DELETE FROM USERS WHERE id=?";
-//        this.jdbcTemplate.update(sql, id);
 //    }
 }
