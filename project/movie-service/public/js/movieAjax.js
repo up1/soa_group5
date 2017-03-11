@@ -9,7 +9,7 @@ $(document).ready(function() {
             $('.movie-container').append('<div id="' + data[i].id +'" class="movie_content"></div>');
 
             $('#'+data[i].id).append(`<div class="col s3 m4">
-                                                    <a href="/test?id=${data[i].id}">
+                                                    <a href="/movie_desc?id=${data[i].id}">
                                                     <div class="card">
                                                         <div class="card-image">
                                                             <img src=${ data[i].poster }>

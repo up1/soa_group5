@@ -19,10 +19,10 @@ public class WebController {
         this.movieRepository = movieRepository;
     }
 
-    @RequestMapping(value="/test", method= RequestMethod.GET)
-    public String test(@RequestParam(value = "id", defaultValue = "1") int id, Model model){
-        model.addAttribute("tests", movieRepository.findById((long) id));
-        return "Home";
+    @RequestMapping(value="/movie_desc", method= RequestMethod.GET)
+    public String movie_description(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("movie", movieRepository.findById((long) id));
+        return "movie_description";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
