@@ -6,20 +6,21 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
-	<style type="text/css">
-      		body {font-family: 'Kanit';}
-	  </style>
-	<title th:text="${movie.name_en}">Test</title>
+	<script src="js/MovieDetail.js"> </script>
+
+	<title>Test</title>
 </head>
 
 <body>
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-
+    <!-- movie id -->
+    <div id="movie_id" th:text="${movie.id}" hidden="true"></div>
 
 <nav>
 	<div class="white nav-wrapper">
@@ -32,7 +33,7 @@
 </nav>
 
 <div class="col-md-12">
-	<img class="responsive-img" th:src="${movie.cover}"/>
+	<img class="responsive-img" id="cover"/>
 </div>
 
 <div class="container">
@@ -44,18 +45,17 @@
 		<div class="col s8">
 			<div class="white darken-1">
 				<div class="card-content black-text">
-					<span class="card-title" th:text="${movie.name_en}">Logan</span>
-					<span class="card-title" th:text="${movie.name_th}">โลแกน เดอะ วูล์ฟเวอรีน</span><hr/>
-
+					<span class="card-title" id="name_th"></span>
+					<span class="card-title" id="name_en"></span><hr/>
 					<span><b>เรื่องย่อ</b></span><br/>
-					<span th:text="${movie.description}"></span>
+					<span id="description"></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="card-content black-text">
 					<div class="col s8">
-						<span th:text="${'Release date : ' + movie.release_date}">Release date : 02 มีนาคม 2560</span><br/>
-						<span th:text="${'Length : ' + movie.duration}">Length : 137 นาที</span>
+						<span id="release_date"></span><br/>
+						<span id="duration"></span>
 					</div>
 					<div class="col s4">
 						<button class="waves-effect waves-light btn red">Show Time</button>
@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	<div class="row center">
-		<iframe width="639" height="360" th:src="${ movie.trailer }" frameborder="0" allowfullscreen=""></iframe>
+		<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
 	</div>
 </div>
 
