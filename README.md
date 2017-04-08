@@ -7,24 +7,24 @@ User Service
 - Change Password
 - Forget Password
 
-Movies
+Movies Service
 
 - View All Movies
 - View Coming Soon Movies
 - View On Cinema Movies
 - View Out of Cinema Movies
 
-
-Cinemas 
+Cinemas Service
 - View By Zone
 - view By Group and Zone
 
-Showtimes 
+Showtimes Service
 
 - View By Movies ID and Cinemas ID
 - View By Movies ID
 - View By Cinemas ID
 
+Search Service
 
 Notification
 - Notification E-mail
