@@ -20,80 +20,80 @@
 
 <body>
     <!-- movie id -->
-    <div id="movie_id" th:text="${movie.id}" hidden="true"></div>
+    <div id="movie_id" th:text="${id}" hidden="true"></div>
 
-<nav>
-	<div class="white nav-wrapper">
-		<ul id="nav-mobile" class="right">
-			<li><a href="sass.html"><span class="black-text">Home</span></a></li>
-			<li><a href="sass.html"><span class="black-text">Movie</span></a></li>
-			<li><a href="sass.html"><span class="black-text">Register</span></a></li>
-		</ul>
-	</div>
-</nav>
-
-<div class="col-md-12">
-	<img class="responsive-img" id="cover"/>
-</div>
-
-<div class="container">
-	<div class="card row">
-		<div class="col s4">
-			<img class="responsive-img" width="300" th:src="${movie.poster}"/>
+	<nav>
+		<div class="white nav-wrapper">
+			<ul id="nav-mobile" class="right">
+				<li><a href="sass.html"><span class="black-text">Home</span></a></li>
+				<li><a href="sass.html"><span class="black-text">Movie</span></a></li>
+				<li><a href="sass.html"><span class="black-text">Register</span></a></li>
+			</ul>
 		</div>
-		<!-- movietitle -->
-		<div class="col s8">
-			<div class="white darken-1">
-				<div class="card-content black-text">
-					<span class="card-title" id="name_th"></span>
-					<span class="card-title" id="name_en"></span><hr/>
-					<span><b>เรื่องย่อ</b></span><br/>
-					<span id="description"></span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="card-content black-text">
-					<div class="col s8">
-						<span id="release_date"></span><br/>
-						<span id="duration"></span>
-					</div>
-					<div class="col s4">
-						<button class="waves-effect waves-light btn red">Show Time</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row center">
-		<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
-	</div>
-</div>
+	</nav>
 
-<footer class="page-footer">
+	<div class="col-md-12">
+		<img class="responsive-img" id="cover"/>
+	</div>
+
 	<div class="container">
-		<div class="row">
-			<div class="col l6 s12">
-				<h5 class="white-text">Footer Content</h5>
-				<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+		<div class="card row">
+			<div class="col s4">
+				<img class="responsive-img" width="300" id="poster"/>
 			</div>
-			<div class="col l4 offset-l2 s12">
-				<h5 class="white-text">Links</h5>
-				<ul>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-				</ul>
+			<!-- movietitle -->
+			<div class="col s8">
+				<div class="white darken-1">
+					<div class="card-content black-text">
+						<span class="card-title" id="name_th"></span>
+						<span class="card-title" id="name_en"></span><hr/>
+						<span><b>เรื่องย่อ</b></span><br/>
+						<span id="description"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="card-content black-text">
+						<div class="col s8">
+							<span id="release_date"></span><br/>
+							<span id="duration"></span>
+						</div>
+						<div class="col s4">
+							<button class="waves-effect waves-light btn red">Show Time</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="row center">
+			<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
+		</div>
 	</div>
-	<div class="footer-copyright">
+
+	<footer class="page-footer">
 		<div class="container">
-			© 2014 Copyright Text
-			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Footer Content</h5>
+					<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
-</footer>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2014 Copyright Text
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
 
 </body>
 </html>

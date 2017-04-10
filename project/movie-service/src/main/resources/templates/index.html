@@ -1,81 +1,356 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
 
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-        <!-- jQuery -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="css/custom.css"/>-->
 
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/custom.css"/>
+    <script src="js/movieAjax.js"> </script>
 
-        <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
 
-        <script src="js/movieAjax.js"> </script>
-        <title> ShowtimeTH </title>
-    </head>
-    <body>
-        <!-- Nav -->
-        <nav>
-            <div class="white nav-wrapper">
-                <ul id="nav-mobile" class="right">
-                    <li><a href="sass.html"><span class="black-text">Home</span></a></li>
-                    <li><a href="sass.html"><span class="black-text">Movie</span></a></li>
-                    <li><a href="sass.html"><span class="black-text">Register</span></a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <!--  -->
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <div class="card grey lighten-2" style="padding:20px;">
-                        <div class="card-content white-text">
-                            <span class="card-title black-text">Movies</span>
-                            <!-- item -->
-                            <div class="center">
-                                <div class="row movie-container">
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row movie-container">
-
+    <title> ShowtimeTH </title>
+</head>
+<body>
+<div class="ui secondary  menu">
+    <a class="item">
+        Home
+    </a>
+    <div class="right menu">
+        <div class="item">
+            <div class="ui icon input">
+                <input type="text" placeholder="Search..."/>
+                <i class="search link icon"></i>
             </div>
         </div>
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Footer Content</h5>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
-                        <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2014 Copyright Text
-                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-                </div>
-            </div>
-        </footer>
+        <a class="ui item">
+            Register
+        </a>
+    </div>
+</div>
 
-    </body>
+<script>
+        var movie_collection = [];
+        var cinema_collection = [];
+        function show_hide(name) {
+            var movie_container = document.getElementsByClassName('movie');
+            var cinema_container = document.getElementsByClassName('cinema');
+            if(name == 'movie'){
+                if(movie_container[0].style.display == 'none'){
+                    cinema_container[0].style.display = 'none';
+                    movie_container[0].style.display = 'block';
+                } else {
+                    movie_container[0].style.display = 'none';
+                }
+            } else {
+                if(cinema_container[0].style.display == 'none'){
+                    movie_container[0].style.display = 'none';
+                    cinema_container[0].style.display = 'block';
+                } else {
+                    cinema_container[0].style.display = 'none';
+                }
+            }
+        }
+
+        function collect_movie(id) {
+            var movie = document.getElementById('m-'+id);
+            if(movie_collection.includes(id)){
+                var position = movie_collection.indexOf(id);
+                movie_collection.splice(position, 1);
+                movie.className = 'movie-list';
+            } else {
+                movie_collection.push(id);
+                movie.className += ' selected';
+            }
+            console.log(movie_collection);
+        }
+
+        function collect_cinema(id) {
+            var cinema = document.getElementById('c-'+id);
+            if(cinema_collection.includes(id)){
+                var position = cinema_collection.indexOf(id);
+                cinema_collection.splice(position, 1);
+                cinema.className = 'cinema-list';
+            } else {
+                cinema_collection.push(id);
+                cinema.className += ' selected';
+            }
+            console.log(cinema_collection);
+        }
+
+        function go_to_showtime(){
+            document.getElementById('selected_movie').value = movie_collection;
+            document.getElementById('selected_cinema').value = cinema_collection;
+            console.log(document.getElementById('selected_movie').value);
+            console.log(document.getElementById('selected_cinema').value);
+        }
+        </script>
+<!--<p class="cinema_name"></p>-->
+<!-- Movie&Cinema dropdown -->
+
+<div class="ui grid centered">
+    <img src="test1.jpeg" alt="picture" style="width:width;height:height;"/>
+    <div class="ui container" style="margin-top: 20px">
+        <div class="ui menu">
+            <a class="movie item">
+                Movie
+                <i class="dropdown icon"></i>
+            </a>
+            <div class="ui fluid popup bottom left transition hidden" style="top: 555px; left: 1px; bottom: auto; right: auto; width: 607px;">
+                <div class="ui container" id="movie-showtime">
+
+                </div>
+            </div>
+            <a class="cinema item">
+                Cinema
+                <i class="dropdown icon"></i>
+            </a>
+            <div class="ui fluid popup bottom left transition hidden" style="top: 555px; left: 1px; bottom: auto; right: auto; width: 607px;">
+                <div class="ui container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Movie -->
+    <div class="ui card twelve wide column centered">
+        <div id="movie-container" class="ui three column grid">
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+           $('.menu .movie')
+            .popup({
+                inline     : true,
+                hoverable  : true,
+                position   : 'bottom left',
+                delay: {
+                show: 300,
+                hide: 800
+                }
+            })
+            ;
+            $('.menu .cinema')
+            .popup({
+                inline     : true,
+                hoverable  : true,
+                position   : 'bottom left',
+                delay: {
+                show: 300,
+                hide: 800
+                }
+            })
+            ;
+        </script>
+
+</body>
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.w3.org/1999/xhtml">-->
+    <!--<head>-->
+
+        <!--&lt;!&ndash; Compiled and minified CSS &ndash;&gt;-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>-->
+
+        <!--&lt;!&ndash; jQuery &ndash;&gt;-->
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+
+        <!--&lt;!&ndash; Compiled and minified JavaScript &ndash;&gt;-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>-->
+
+        <!--<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">-->
+        <!--<script-->
+                <!--src="https://code.jquery.com/jquery-3.1.1.min.js"-->
+                <!--integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="-->
+                <!--crossorigin="anonymous"></script>-->
+        <!--<script src="semantic/dist/semantic.min.js"></script>-->
+
+        <!--&lt;!&ndash; Custom CSS &ndash;&gt;-->
+        <!--<link rel="stylesheet" href="css/custom.css"/>-->
+
+        <!--<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>-->
+
+        <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>-->
+
+        <!--<script src="js/movieAjax.js"> </script>-->
+        <!--<title> ShowtimeTH </title>-->
+    <!--</head>-->
+    <!--<body>-->
+        <!--&lt;!&ndash; Nav &ndash;&gt;-->
+        <!--<nav>-->
+            <!--<div class="white nav-wrapper">-->
+                <!--<ul id="nav-mobile" class="right">-->
+                    <!--<li><a href="sass.html"><span class="black-text">Home</span></a></li>-->
+                    <!--<li><a href="sass.html"><span class="black-text">Movie</span></a></li>-->
+                    <!--<li><a href="sass.html"><span class="black-text">Register</span></a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</nav>-->
+
+        <!--<script>-->
+        <!--var movie_collection = [];-->
+        <!--var cinema_collection = [];-->
+        <!--function show_hide(name) {-->
+            <!--var movie_container = document.getElementsByClassName('movie');-->
+            <!--var cinema_container = document.getElementsByClassName('cinema');-->
+            <!--var movie_arrow = document.getElementById('movie-arrow');-->
+            <!--var cinema_arrow = document.getElementById('cinema-arrow');-->
+            <!--if(name == 'movie'){-->
+                <!--if(movie_container[0].style.display == 'none'){-->
+                    <!--cinema_container[0].style.display = 'none';-->
+                    <!--cinema_arrow.innerHTML = "keyboard_arrow_down";-->
+                    <!--movie_container[0].style.display = 'block';-->
+                    <!--movie_arrow.innerHTML = "keyboard_arrow_up";-->
+                <!--} else {-->
+                    <!--movie_container[0].style.display = 'none';-->
+                    <!--movie_arrow.innerHTML = "keyboard_arrow_down";-->
+                <!--}-->
+            <!--} else {-->
+                <!--if(cinema_container[0].style.display == 'none'){-->
+                    <!--movie_container[0].style.display = 'none';-->
+                    <!--movie_arrow.innerHTML = "keyboard_arrow_down";-->
+                    <!--cinema_container[0].style.display = 'block';-->
+                    <!--cinema_arrow_innerHTML = "keyboard_arrow_up";-->
+                <!--} else {-->
+                    <!--cinema_container[0].style.display = 'none';-->
+                    <!--cinema_arrow_innerHTML = "keyboard_arrow_down";-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+
+        <!--function collect_movie(id) {-->
+            <!--var movie = document.getElementById('m-'+id);-->
+            <!--if(movie_collection.includes(id)){-->
+                <!--var position = movie_collection.indexOf(id);-->
+                <!--movie_collection.splice(position, 1);-->
+                <!--movie.className = 'movie-list';-->
+            <!--} else {-->
+                <!--movie_collection.push(id);-->
+                <!--movie.className += ' selected';-->
+            <!--}-->
+            <!--console.log(movie_collection);-->
+        <!--}-->
+
+        <!--function collect_cinema(id) {-->
+            <!--var cinema = document.getElementById('c-'+id);-->
+            <!--if(cinema_collection.includes(id)){-->
+                <!--var position = cinema_collection.indexOf(id);-->
+                <!--cinema_collection.splice(position, 1);-->
+                <!--cinema.className = 'cinema-list';-->
+            <!--} else {-->
+                <!--cinema_collection.push(id);-->
+                <!--cinema.className += ' selected';-->
+            <!--}-->
+            <!--console.log(cinema_collection);-->
+        <!--}-->
+
+        <!--function go_to_showtime(){-->
+            <!--document.getElementById('selected_movie').value = movie_collection;-->
+            <!--document.getElementById('selected_cinema').value = cinema_collection;-->
+            <!--console.log(document.getElementById('selected_movie').value);-->
+            <!--console.log(document.getElementById('selected_cinema').value);-->
+        <!--}-->
+        <!--</script>-->
+
+        <!--&lt;!&ndash;<p class="cinema_name"></p>&ndash;&gt;-->
+        <!--&lt;!&ndash; Movie&Cinema dropdown &ndash;&gt;-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col s12">-->
+                    <!--<div class="row" id="showtime-row">-->
+                        <!--<div class="collection" id="showtime-form">-->
+                            <!--<form action="#" th:action="@{/show}" th:object="${check}" method="post">-->
+                                <!--<button onclick="show_hide('movie')" type="button" class="showtime"><span> Choose Movies <i class="material-icons" id="movie-arrow">keyboard_arrow_down</i></span></button>-->
+                                <!--<button onclick="show_hide('cinema')" type="button" class="showtime"><span> Choose Cinemas </span><i class="material-icons" id="cinema-arrow">keyboard_arrow_down</i></button>-->
+                                <!--<button type="submit" onclick="go_to_showtime();" class="showtime"><span> Check Showtimes </span></button>-->
+                                <!--<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>-->
+                                <!--<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>-->
+                            <!--</form>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="card grey lighten-2 movie" style="padding:20px;display:none;">-->
+                        <!--<div class="card-content white-text">-->
+                            <!--&lt;!&ndash; item &ndash;&gt;-->
+                            <!--<div class="center">-->
+                                <!--<div class="row movie-showtime">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card grey lighten-2 cinema" style="padding:20px;display:none;">-->
+                        <!--<div class="card-content white-text">-->
+                            <!--&lt;!&ndash; item &ndash;&gt;-->
+                            <!--<div class="center">-->
+                                <!--<div class="row cinema-showtime">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--&lt;!&ndash; Movie &ndash;&gt;-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col s12">-->
+                    <!--<div class="card grey lighten-2" style="padding:20px;">-->
+                        <!--<div class="card-content white-text">-->
+                            <!--<span class="card-title black-text">Movies</span>-->
+                            <!--&lt;!&ndash; item &ndash;&gt;-->
+                            <!--<div class="center">-->
+                                <!--<div class="row movie-container">-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<footer class="page-footer">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col l6 s12">-->
+                        <!--<h5 class="white-text">Footer Content</h5>-->
+                        <!--<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>-->
+                    <!--</div>-->
+                    <!--<div class="col l4 offset-l2 s12">-->
+                        <!--<h5 class="white-text">Links</h5>-->
+                        <!--<ul>-->
+                            <!--<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>-->
+                            <!--<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>-->
+                            <!--<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>-->
+                            <!--<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="footer-copyright">-->
+                <!--<div class="container">-->
+                    <!--© 2014 Copyright Text-->
+                    <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</footer>-->
+
+
+
+
+    <!--</body>-->
+<!--</html>-->

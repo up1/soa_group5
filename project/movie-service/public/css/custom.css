@@ -14,3 +14,40 @@ body {
     height: 400px;
     width: 100%;
 }
+
+.selected .card{
+    background: black !important;
+}
+
+.selected .card .card-content p{
+    color: #ffcc00 !important;
+}
+
+.selected .card .card-image img{
+    filter: opacity(50%);
+}
+
+.selected .collection a.collection-item{
+    background: black !important;
+    color: #ffcc00 !important;
+}
+
+button.showtime {
+    height: 50px !important;
+}
+
+#showtime-form.collection form{
+    margin: 0;
+}
+
+#showtime-form.collection form{
+    background: #AAA;
+}
+
+#showtime-row.row {
+    margin-bottom: 0 !important;
+}
+
+.movie {
+    padding-top: 0;
+}

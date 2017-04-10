@@ -3,6 +3,7 @@ package demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,12 +22,18 @@ public class WebController {
 
     @RequestMapping(value="/movie_desc", method= RequestMethod.GET)
     public String movie_description(@RequestParam(value = "id") int id, Model model){
-        model.addAttribute("movie", movieRepository.findById((long) id));
+        model.addAttribute("id", id);
         return "movie_description";
     }
 
+    @RequestMapping(value="/show", method= RequestMethod.POST)
+    public String showtime(@ModelAttribute Check check){
+        return "showtime";
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("check", new Check());
         return "index";
     }
 }
