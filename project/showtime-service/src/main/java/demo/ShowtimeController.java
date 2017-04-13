@@ -36,7 +36,7 @@ public class ShowtimeController {
         return this.showtimeRepository.findByMovieId(movid_id);
     }
 
-    @RequestMapping("/showfrommovie")
+    @RequestMapping("/showfromcinema")
     public List<Showtime> getShowtimeFromCinema(@RequestParam(value = "cinema") List<String> cinema_id) {
         return this.showtimeRepository.findByCinemaId(cinema_id);
     }
