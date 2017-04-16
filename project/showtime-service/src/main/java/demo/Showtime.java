@@ -1,5 +1,8 @@
 package demo;
 
+import demo.adapter.Cinema;
+import demo.adapter.Movie;
+
 /**
  * Created by DELL on 03/04/2560.
  */
@@ -14,6 +17,8 @@ public class Showtime {
     private String show_movie_link;
     private int show_theatre;
     private String show_system_type;
+    private Movie movie;
+    private Cinema cinema;
 
     public long getShowtime_id() {
         return showtime_id;
@@ -85,5 +90,21 @@ public class Showtime {
 
     public void setShow_system_type(String show_system_type) {
         this.show_system_type = show_system_type;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public Cinema getCinema() {
+        return cinema;
+    }
+
+    public void setCinema(Cinema cinema) {
+        this.cinema = cinema;
     }
 }

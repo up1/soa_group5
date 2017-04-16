@@ -1,53 +1,19 @@
-body {
-    font-family: 'Kanit';
+button.ui.button {
+	background: red;
+	color: white;
 }
 
-.card .card-image img {
-    display: block;
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 270px;
-    height: 400px;
-    width: 100%;
+#movie-dropdown , #cinema-dropdown{
+    padding: 20px;
 }
 
-.selected .card{
+.card {
+    padding: 5px !important;
+}
+
+
+
+.selected {
     background: black !important;
-}
-
-.selected .card .card-content p{
-    color: #ffcc00 !important;
-}
-
-.selected .card .card-image img{
-    filter: opacity(50%);
-}
-
-.selected .collection a.collection-item{
-    background: black !important;
-    color: #ffcc00 !important;
-}
-
-button.showtime {
-    height: 50px !important;
-}
-
-#showtime-form.collection form{
-    margin: 0;
-}
-
-#showtime-form.collection form{
-    background: #AAA;
-}
-
-#showtime-row.row {
-    margin-bottom: 0 !important;
-}
-
-.movie {
-    padding-top: 0;
+    color: white;
 }
