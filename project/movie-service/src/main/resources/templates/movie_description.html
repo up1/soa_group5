@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8"/>
 	<!--Import Google Icon Font-->
@@ -29,11 +29,9 @@
 </head>
 
 <body>
-<!-- movie id -->
-<div id="movie_id" hidden="true">5</div>
 <!-- NavBar-->
 <div class="ui secondary menu container centered grid" style="padding-top: 10px;">
-	<a class="item" href="index.html">
+	<a class="item" href="/">
 		Home
 	</a>
 	<div class="centered menu">
@@ -117,6 +115,9 @@
         </div>
     </div>
 </footer> -->
+
+<!-- movie id -->
+<div id="movie_id" hidden="true" th:text="${id}"></div>
 
 </body>
 </html>

@@ -2,11 +2,34 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="css/custom.css"/>-->
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+
+    <script src="js/showtime.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <title> ShowtimeTH </title>
 </head>
 <body>
-    <div id="movie_id" th:text="${check.selected_movie}"></div>
-    <div id="cinema_id" th:text="${check.selected_cinema}"></div>
+    <!--Movie&Cinema list-->
+    <div hidden="true" id="movie_id" th:text="${check.selected_movie}"></div>
+    <div hidden="true" id="cinema_id" th:text="${check.selected_cinema}"></div>
 
+    <div id="movie">
+
+    </div>
 </body>
 </html>
