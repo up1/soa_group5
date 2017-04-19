@@ -11,7 +11,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
 
+    <script src="js/indexAjax.js"></script>
     <script src="js/movieAjax.js"></script>
+    <script src="js/cinemaAjax.js"></script>
 
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
@@ -26,157 +28,23 @@
 </head>
 <body>
 <!-- NavBar-->
-<div class="ui secondary menu container centered grid" style="padding-top: 10px;">
-    <a class="item" href="/">
-        Home
-    </a>
-    <div class="centered menu">
-        <div class="item" style="margin-right: 100px; margin-left: 100px;">
-            <div class="ui category search">
-                <div class="ui icon input">
-                    <input class="prompt" type="text" placeholder="Search  Movie..."/>
-                    <i class="search icon"></i>
-                </div>
-                <div class="results"></div>
-            </div>
-        </div>
-        <a class="ui item" href="login_page.html">
-            Login
-        </a>
-        <a class="ui item" href="register_page.html">
-            Register
-        </a>
-    </div>
-</div>
+<div th:replace="navbar :: navbar"></div>
 <!--Header pic-->
 <div class="ui centered grid" style="padding-bottom: 20px; ">
     <img src="test1.jpeg"/></div>
+<!--Check Showtime-->
+<div th:replace="check_showtime :: check_showtime"></div>
 
-<script type="text/javascript">
-                    var movie_test_list = [];
-                    var cinema_test_list = [];
-                    function test_select_movie(id){
-                        var movie_test = document.getElementById('mo-'+id);
-                        if(movie_test_list.includes(id)){
-                        var position = movie_test_list.indexOf(id);
-                        movie_test_list.splice(position, 1);
-                        movie_test.className = 'ui segment card';
-                    } else {
-                        movie_test_list.push(id);
-                        movie_test.className += ' selected';
-                    }
-                    console.log(movie_test_list);
-                    }
-                    function test_select_cinema(id){
-                        var cinema_test = document.getElementById('ci-'+id);
-                        if(cinema_test_list.includes(id)){
-                        var position = cinema_test_list.indexOf(id);
-                        cinema_test_list.splice(position, 1);
-                        cinema_test.className = 'ui segment card';
-                    } else {
-                        cinema_test_list.push(id);
-                        cinema_test.className += ' selected';
-                    }
-                    console.log(cinema_test_list);
-                    }
-                    function go_to_showtime(){
-                    document.getElementById('selected_movie').value = movie_test_list;
-                    document.getElementById('selected_cinema').value = cinema_test_list;
-                    console.log(document.getElementById('selected_movie').value);
-                    console.log(document.getElementById('selected_cinema').value);
-                    console.log('test');
-                }
-
-
-
-</script>
 <!--<p class="cinema_name"></p>-->
-<!-- Movie&Cinema dropdown -->
+
+<!-- Movie -->
 <div class="ui grid centered">
-    <div class="ui container">
-        <div class="ui modal movie">
-            <i class="close icon"></i>
-            <div class="header">
-                Select Movie
-            </div>
-            <!-- <div class="image content">
-                <div class="ui medium image">
-                    <img src="/images/avatar/large/chris.jpg">
-                </div>
-                <div class="description">
-                  <div class="ui header">We've auto-chosen a profile image for you.</div>
-                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-                  <p>Is it okay to use this photo?</p>
-                </div>
-            </div> -->
-            <div class="ui container">
-                <!-- <div class="ui card sixteen wide column centered"> -->
-                <div class="ui six column grid" id="movie-dropdown">
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ui grid centered">
-    <div class="ui container">
-        <div class="ui modal cinema">
-            <i class="close icon"></i>
-            <div class="header">
-                Select Cinema
-            </div>
-            <!-- <div class="image content">
-                <div class="ui medium image">
-                    <img src="/images/avatar/large/chris.jpg">
-                </div>
-                <div class="description">
-                  <div class="ui header">We've auto-chosen a profile image for you.</div>
-                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-                  <p>Is it okay to use this photo?</p>
-                </div>
-            </div> -->
-            <div class="ui container">
-                <!-- <div class="ui card sixteen wide column centered"> -->
-                <div class="ui five column grid" id="cinema-dropdown">
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ui grid centered">
-    <!-- Dropdown -->
-    <div class="ui container">
-        <button class="ui button" onclick="showMovieToSelect();">Select Movie</button>
-        <button class="ui button" onclick="showCinemaToSelect();">Select Cinemas</button>
-        <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
-            <input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
-            <input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-            <button type="submit" onclick="go_to_showtime()" class="ui button">Check Showtimes</button>
-        </form>
-
-        <!--<a href="showtime.html">-->
-            <!--<button class="ui button">Check Showtimes</button>-->
-        <!--</a>-->
-    </div>
-
-    <!-- Movie -->
     <div class="ui card twelve wide column centered">
         <div id="movie-container" class="ui three column grid">
 
         </div>
     </div>
 </div>
-
-<script>
-                    function showMovieToSelect(){
-                       $('.ui.modal.movie').modal('show');
-                    }
-                    function showCinemaToSelect(){
-                        $('.ui.modal.cinema').modal('show');
-                    }
-
-</script>
 
 </body>
 </html>

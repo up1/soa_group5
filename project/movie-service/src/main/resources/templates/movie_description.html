@@ -30,28 +30,7 @@
 
 <body>
 <!-- NavBar-->
-<div class="ui secondary menu container centered grid" style="padding-top: 10px;">
-	<a class="item" href="/">
-		Home
-	</a>
-	<div class="centered menu">
-		<div class="item" style="margin-right: 100px; margin-left: 100px;">
-			<div class="ui category search">
-				<div class="ui icon input">
-					<input class="prompt" type="text" placeholder="Search  Movie..."/>
-					<i class="search icon"></i>
-				</div>
-				<div class="results"></div>
-			</div>
-		</div>
-		<a class="ui item" href="login_page.html">
-			Login
-		</a>
-		<a class="ui item" href="register_page.html">
-			Register
-		</a>
-	</div>
-</div>
+<div th:replace="navbar :: navbar"></div>
 
 <div class="col-md-12">
 	<img class="responsive-img" id="cover" />
