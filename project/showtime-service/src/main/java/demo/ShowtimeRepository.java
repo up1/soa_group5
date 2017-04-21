@@ -34,7 +34,7 @@ public class ShowtimeRepository {
     public List<Showtime> findByMovieId(List<String> movie_id) {
         try {
             String movie_list = movie_id.toString().replace("[", "").replace("]", "");
-            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE movie_id IN (" + movie_list + ")", new ShowtimeRowMapper());
+            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE movie_id IN (" + movie_list + ")  order by cinema_id, movie_id, show_theatre, show_time", new ShowtimeRowMapper());
         }catch (Exception exception) {
             throw new UserNotFoundException((long) 1);
         }
