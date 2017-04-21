@@ -3,7 +3,9 @@ button.ui.button {
 	color: white;
 }
 
-#movie-dropdown , #cinema-dropdown{
+#movie-dropdown ,
+#major-bkk-dropdown, #major-center-dropdown, #major-eas-dropdown, #major-nor-dropdown, #major-esn-dropdown, #major-sou-dropdown, #major-wes-dropdown,
+#sf-bkk-dropdown, #sf-center-dropdown, #sf-eas-dropdown, #sf-nor-dropdown, #sf-esn-dropdown, #sf-sou-dropdown, #sf-wes-dropdown{
     padding: 20px;
 }
 
