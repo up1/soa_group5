@@ -9,10 +9,9 @@
     <!--<link rel="stylesheet" href="css/custom.css"/>-->
 
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
-
-    <script src="js/showtime.js"></script>
-    <script src="js/movieAjax.js"></script>
-    <script src="js/cinemaAjax.js"></script>
+    <script type="text/javascript" th:src="@{js/showtime.js}"></script>
+    <script type="text/javascript" th:src="@{js/movieAjax.js}"></script>
+    <script type="text/javascript" th:src="@{js/cinemaAjax.js}"></script>
 
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
@@ -79,124 +78,64 @@
     <div th:replace="check_showtime :: check_showtime"></div>
 
     <!--Showtime-->
-    <div class="ui grid centered">
+    <div id="showtime" class="ui grid centered">
         <!-- Movie -->
-        <div class="ui divided items">
-            <h3 class="ui block header left floated">
-                Paragon Cineplex
-            </h3>
-            <div class="item">
-                <div class="head">
-                    <h2 style="margin: 30px; padding-top: 80px;">theater 1</h2>
-                </div>
-                <div class="image" style="width: 150px">
-                    <img src="poster1.jpg"/>
-                </div>
-                <div class="content">
-                    <a class="header" href="movie description.html">Beauty and the beast</a>
-                    <div class="meta">
-                        <span class="cinema">โฉมงามกับเจ้าชายอสูร</span>
-                        <span class="cinema">Paragon Cineplex</span>
-                    </div>
-                    <div class="description">
-                        <button class="ui red basic button" disabled="true">11.10</button>
-                        <button class="ui active red button">14.30</button>
-                        <button class="ui red basic button">16.45</button>
-                        <button class="ui red basic button">19.20</button>
-                    </div>
-                    <div class="extra">
-                        <div class="ui label">120 นาที</div>
-                        <div class="ui label">Digital 2D</div>
-                        <div class="ui label">ทั่วไป</div>
-                        <div class="ui label"><i class="globe icon"></i>Soundtrack</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="item">
-                <div class="head">
-                    <h2 style="margin: 30px; padding-top: 80px;">theater 2</h2>
-                </div>
-                <div class="image" style="width: 150px">
-                    <img src="poster4.jpg"/>
-                </div>
-                <div class="content">
-                    <a class="header" href="movie description.html">The Boss Baby</a>
-                    <div class="meta">
-                        <span class="cinema">เดอะ บอส เบบี้</span>
-                        <span class="cinema">Paragon Cineplex</span>
-                    </div>
-                    <div class="description">
-                        <button class="ui red basic button" disabled="true">11.30</button>
-                        <button class="ui red basic button" disabled="true">13.45</button>
-                        <button class="ui red basic button">17.50</button>
-                        <button class="ui red basic button">20.20</button>
-                    </div>
-                    <div class="extra">
-                        <div class="ui label">97 นาที</div>
-                        <div class="ui label">Digital 2D</div>
-                        <div class="ui label">ทั่วไป</div>
-                        <div class="ui label"><i class="globe icon"></i>TH</div>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="item">-->
+                <!--<div class="head">-->
+                    <!--<h2 style="margin: 30px; padding-top: 80px;">theater 3</h2>-->
+                <!--</div>-->
+                <!--<div class="image" style="width: 150px">-->
+                    <!--<img src="poster5.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="content">-->
+                    <!--<a class="header" href="movie description.html">Kong Skull Island</a>-->
+                    <!--<div class="meta">-->
+                        <!--<span class="cinema">คอง มหาภัยเกาะกะโหลก</span>-->
+                        <!--<span class="cinema">Paragon Cineplex</span>-->
+                    <!--</div>-->
+                    <!--<div class="description">-->
+                        <!--<button class="ui red basic button" disabled="true">11.30</button>-->
+                        <!--<button class="ui red basic button" disabled="true">13.20</button>-->
+                        <!--<button class="ui red basic button">15.50</button>-->
+                        <!--<button class="ui red basic button">18.15</button>-->
+                    <!--</div>-->
+                    <!--<div class="extra">-->
+                        <!--<div class="ui label">118 นาที</div>-->
+                        <!--<div class="ui label">Digital 2D</div>-->
+                        <!--<div class="ui label">ทั่วไป</div>-->
+                        <!--<div class="ui label"><i class="globe icon"></i>Soundtrack</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div class="item">
-                <div class="head">
-                    <h2 style="margin: 30px; padding-top: 80px;">theater 3</h2>
-                </div>
-                <div class="image" style="width: 150px">
-                    <img src="poster5.jpg"/>
-                </div>
-                <div class="content">
-                    <a class="header" href="movie description.html">Kong Skull Island</a>
-                    <div class="meta">
-                        <span class="cinema">คอง มหาภัยเกาะกะโหลก</span>
-                        <span class="cinema">Paragon Cineplex</span>
-                    </div>
-                    <div class="description">
-                        <button class="ui red basic button" disabled="true">11.30</button>
-                        <button class="ui red basic button" disabled="true">13.20</button>
-                        <button class="ui red basic button">15.50</button>
-                        <button class="ui red basic button">18.15</button>
-                    </div>
-                    <div class="extra">
-                        <div class="ui label">118 นาที</div>
-                        <div class="ui label">Digital 2D</div>
-                        <div class="ui label">ทั่วไป</div>
-                        <div class="ui label"><i class="globe icon"></i>Soundtrack</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="head">
-                    <h2 style="margin: 30px; padding-top: 80px;">theater 4</h2>
-                </div>
-                <div class="image" style="width: 150px">
-                    <img src="poster1.jpg"/>
-                </div>
-                <div class="content">
-                    <a class="header" href="movie description.html">Beauty and the beast</a>
-                    <div class="meta">
-                        <span class="cinema">โฉมงามกับเจ้าชายอสูร</span>
-                        <span class="cinema">Paragon Cineplex</span>
-                    </div>
-                    <div class="description">
-                        <button class="ui red basic button" disabled="true">11.10</button>
-                        <button class="ui red basic button" disabled="true">13.30</button>
-                        <button class="ui red basic button">17.30</button>
-                        <button class="ui red basic button">21.20</button>
-                    </div>
-                    <div class="extra">
-                        <div class="ui label">120 นาที</div>
-                        <div class="ui label">IMAX</div>
-                        <div class="ui label">ทั่วไป</div>
-                        <div class="ui label"><i class="globe icon"></i> Soundtrack</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <!--<div class="item">-->
+                <!--<div class="head">-->
+                    <!--<h2 style="margin: 30px; padding-top: 80px;">theater 4</h2>-->
+                <!--</div>-->
+                <!--<div class="image" style="width: 150px">-->
+                    <!--<img src="poster1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="content">-->
+                    <!--<a class="header" href="movie description.html">Beauty and the beast</a>-->
+                    <!--<div class="meta">-->
+                        <!--<span class="cinema">โฉมงามกับเจ้าชายอสูร</span>-->
+                        <!--<span class="cinema">Paragon Cineplex</span>-->
+                    <!--</div>-->
+                    <!--<div class="description">-->
+                        <!--<button class="ui red basic button" disabled="true">11.10</button>-->
+                        <!--<button class="ui red basic button" disabled="true">13.30</button>-->
+                        <!--<button class="ui red basic button">17.30</button>-->
+                        <!--<button class="ui red basic button">21.20</button>-->
+                    <!--</div>-->
+                    <!--<div class="extra">-->
+                        <!--<div class="ui label">120 นาที</div>-->
+                        <!--<div class="ui label">IMAX</div>-->
+                        <!--<div class="ui label">ทั่วไป</div>-->
+                        <!--<div class="ui label"><i class="globe icon"></i> Soundtrack</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
     </div>
 
 
