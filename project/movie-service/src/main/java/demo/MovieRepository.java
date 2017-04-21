@@ -24,15 +24,9 @@ public class MovieRepository {
     }
 
     @Transactional(readOnly = true)
-    public List<Movie> findAll(Long page, Long movieperpage) {
-        if (page < 1) {
-            throw new BadParameterException("page", page);
-        } else if (movieperpage < 0) {
-            throw new BadParameterException("movieperpage", movieperpage);
-        }
+    public List<Movie> findAll() {
 
-        int start = (int)((page - 1) * movieperpage);
-        List<Movie> movieList = this.jdbcTemplate.query("SELECT * FROM Movie LIMIT ?, ?", new Object[]{start, movieperpage}, new MovieRowMapper());
+        List<Movie> movieList = this.jdbcTemplate.query("SELECT * FROM Movie WHERE movie_status='onshow' ORDER BY movie_release_date DESC", new MovieRowMapper());
 
         return movieList;
     }

@@ -26,9 +26,8 @@ public class MovieController {
     }
 
     @RequestMapping("/movies")
-    public List<Movie> getAllmovie(@RequestParam(value="page", defaultValue="1") int page,
-                                 @RequestParam(value="movieperpage", defaultValue="10") int moviePerPage) {
-        return this.movieRepository.findAll((long) page, (long) moviePerPage);
+    public List<Movie> getAllmovie() {
+        return this.movieRepository.findAll();
     }
 
 }
