@@ -5,6 +5,6 @@ package demo;
  */
 public class UserRegisterFailedException extends RuntimeException {
     public UserRegisterFailedException() {
-        super("Username or Password is incorrect");
+        super("Can't register new user :(");
     }
 }

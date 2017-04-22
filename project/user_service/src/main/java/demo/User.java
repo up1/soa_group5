@@ -1,5 +1,7 @@
 package demo;
 
+import demo.adapter.Movie;
+
 import java.util.Date;
 
 /**
