@@ -1,50 +1,42 @@
 package demo; /**
  * Created by Administrator on 6/3/2560.
  */
-import com.sun.corba.se.impl.oa.poa.ActiveObjectMap;
+import demo.adapter.Movie;
+import demo.adapter.MovieAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class UserController {
 
     private final UserRepository userRepository;
+    private final MovieAdapter movieAdapter;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, MovieAdapter movieAdapter) {
         this.userRepository = userRepository;
+        this.movieAdapter = movieAdapter;
     }
 
-    @RequestMapping(value = "/user", produces = "application/json")
-    public User getUser(@RequestParam(value="username") String username) {
+    @RequestMapping(value = "/user/{username}", produces = "application/json")
+    public User getUser(@PathVariable String username) {
         return this.userRepository.getUserData(username);
-    }
-
-    @RequestMapping("/")
-    public String home(){
-        return "Hello, World!";
     }
 
     @RequestMapping(value = "/login", produces = "aplication/json")
     public User authorizeUser(@RequestParam(value="username") String username,
                               @RequestParam(value="password") String password,
                               HttpServletResponse response) throws IOException {
-//        if ( username == null ){
-//            response.sendRedirect("/login.html");
-//            return null;
-//        }
         return this.userRepository.userLogin(username, password);
     }
 
     @PostMapping(value = "/register")
     @ResponseBody
-    public String registerUser(@RequestParam(value="username") String username,
+    public void registerUser(@RequestParam(value="username") String username,
                                @RequestParam(value="password") String password,
                                @RequestParam(value="firstname") String firstname,
                                @RequestParam(value="lastname") String lastname,
@@ -53,27 +45,51 @@ public class UserController {
                                @RequestParam(value="email") String email,
                                @RequestParam(value="noti_status") String noti_status,
                                HttpServletResponse response) throws IOException {
-        return this.userRepository.userRegister(username, password, firstname, lastname, gender, birth_date, email, noti_status);
-//        response.setStatus(HttpServletResponse.SC_OK);
-//        response.sendRedirect("/");
+        this.userRepository.userRegister(username, password, firstname, lastname, gender, birth_date, email, noti_status);
     }
 
     @PutMapping("/edit")
-    public String editUserDetails(@RequestParam(value="username") String username,
+    public void editUserDetails(@RequestParam(value="username") String username,
                                  @RequestParam(value="firstname") String firstname,
                                  @RequestParam(value="lastname") String lastname,
                                  @RequestParam(value="gender") String gender,
                                  @RequestParam(value="birth_date") String birth_date,
                                  @RequestParam(value="email") String email,
                                  @RequestParam(value="noti_status") String noti_status) {
-        return this.userRepository.userEditDetails(username, firstname, lastname, gender, birth_date, email, noti_status);
+        this.userRepository.userEditDetails(username, firstname, lastname, gender, birth_date, email, noti_status);
     }
 
     @PutMapping("/changepassword")
-    public String userChangePassword(@RequestParam(value="username") String username,
+    public void userChangePassword(@RequestParam(value="username") String username,
                                      @RequestParam(value="password") String password,
-                                     @RequestParam(value="new_password") String new_password,
-                                     @RequestParam(value="confirm_new_password") String confirm_new_password){
-        return this.userRepository.userChangePassword(username, password, new_password, confirm_new_password);
+                                     @RequestParam(value="new_password") String new_password){
+        this.userRepository.userChangePassword(username, password, new_password);
     }
+
+    @GetMapping("/{username}/likes")
+    public List<Movie> getUserLikes(@PathVariable String username){
+        List<Integer> movie_id_list = this.userRepository.getUserLikes(username);
+        List<Movie> movieList = null;
+
+        if (movie_id_list.isEmpty()){
+            return null;
+        }
+
+        for (Integer movie_id : movie_id_list){
+            movieList.add(movieAdapter.getMovieById(movie_id));
+        }
+
+        return movieList;
+    }
+
+    @PostMapping("/like")
+    public void likeMovie(@RequestParam(value="movie_id") int movie_id) {
+        this.userRepository.likeMovie(UserAuthenication.getSession().getAttribute("username").toString(), movie_id);
+    }
+
+    @DeleteMapping("/unlike")
+    public void unlikeMovie(@RequestParam(value="movie_id") int movie_id){
+        this.userRepository.unlikeMovie(UserAuthenication.getSession().getAttribute("username").toString(), movie_id);
+    }
+
 }
