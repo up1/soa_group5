@@ -24,7 +24,7 @@ public class ShowtimeRepository {
         try {
             String movie_list = movie_id.toString().replace("[", "").replace("]", "");
             String cinema_list = cinema_id.toString().replace("[", "").replace("]", "");
-            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE movie_id IN (" + movie_list + ") AND cinema_id IN (" + cinema_list + ")", new ShowtimeRowMapper());
+            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE movie_id IN (" + movie_list + ") AND cinema_id IN (" + cinema_list + ") order by cinema_id, movie_id, show_theatre, show_time", new ShowtimeRowMapper());
         }catch (Exception exception) {
             throw new UserNotFoundException((long) 1);
         }
@@ -44,7 +44,7 @@ public class ShowtimeRepository {
     public List<Showtime> findByCinemaId(List<String> cinema_id) {
         try {
             String cinema_list = cinema_id.toString().replace("[", "").replace("]", "");
-            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE cinema_id IN (" + cinema_list + ")", new ShowtimeRowMapper());
+            return this.jdbcTemplate.query("SELECT * FROM Showtime WHERE cinema_id IN (" + cinema_list + ") order by cinema_id, movie_id, show_theatre, show_time", new ShowtimeRowMapper());
         }catch (Exception exception) {
             throw new UserNotFoundException((long) 1);
         }
