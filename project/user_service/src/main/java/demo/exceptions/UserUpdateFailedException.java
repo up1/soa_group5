@@ -1,4 +1,4 @@
-package demo;
+package demo.exceptions;
 
 public class UserUpdateFailedException extends RuntimeException {
     public UserUpdateFailedException() {

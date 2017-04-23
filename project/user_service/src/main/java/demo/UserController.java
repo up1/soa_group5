@@ -92,4 +92,9 @@ public class UserController {
         this.userRepository.unlikeMovie(UserAuthenication.getSession().getAttribute("username").toString(), movie_id);
     }
 
+    @PostMapping("/logout")
+    public void logout(){
+        this.userRepository.logout();
+    }
+
 }

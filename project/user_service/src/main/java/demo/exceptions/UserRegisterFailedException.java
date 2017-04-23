@@ -1,4 +1,4 @@
-package demo;
+package demo.exceptions;
 
 /**
  * Created by DELL on 12/04/2560.

@@ -1,4 +1,4 @@
-package demo;
+package demo.exceptions;
 
 /**
  * Created by Administrator on 7/3/2560.

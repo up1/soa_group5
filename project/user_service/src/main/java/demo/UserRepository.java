@@ -1,6 +1,9 @@
 package demo;
 
-import demo.adapter.Movie;
+import demo.exceptions.UserLoginFailedException;
+import demo.exceptions.UserNotFoundException;
+import demo.exceptions.UserRegisterFailedException;
+import demo.exceptions.UserUpdateFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -45,8 +48,10 @@ public class UserRepository {
                     "email, " +
                     "noti_status " +
                     "FROM User WHERE username=? and password=?";
-            return this.jdbcTemplate.queryForObject(sql,
+            User user = this.jdbcTemplate.queryForObject(sql,
                     new Object[]{username, password}, new UserRowMapper());
+            UserAuthenication.authorize(user);
+            return user;
         }catch (Exception exception) {
             throw new UserLoginFailedException();
         }
@@ -123,5 +128,9 @@ public class UserRepository {
         } catch (Exception e) {
             throw new UserNotFoundException(username);
         }
+    }
+
+    public void logout(){
+        UserAuthenication.deleteSession();
     }
 }
