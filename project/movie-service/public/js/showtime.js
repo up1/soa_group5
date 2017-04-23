@@ -52,13 +52,13 @@ $(document).ready(function() {
                                                                                                         <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                     </div>
                                                                                                     <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                        <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                        <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>`);
                                                     } else {
                                                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                     }
                     } else {
                         if(major_list != cinema_id) {
@@ -93,16 +93,18 @@ $(document).ready(function() {
                                                                                                         <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                     </div>
                                                                                                     <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                        <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                        <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>`);
                                                     } else {
                                                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                     }
                     }
+                    startTime(showtime[i].show_time);
                 }
+
             });
     } else {
         if(cinema_id != '[]' && movie_id == '[]') {
@@ -149,13 +151,13 @@ $(document).ready(function() {
                                                                                                                     <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                                 </div>
                                                                                                                 <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                                    <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                                    <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>`);
                                                                 } else {
                                                                     console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                                    $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                                    $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                                 }
                                 } else {
                                     if(major_list != cinema_id) {
@@ -190,16 +192,18 @@ $(document).ready(function() {
                                                                                                                     <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                                 </div>
                                                                                                                 <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                                    <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                                    <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>`);
                                                                 } else {
                                                                     console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                                    $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                                    $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                                 }
                                 }
+                                startTime(showtime[i].show_time);
                             }
+
                         });
         } else {
             if(cinema_id != '[]' && movie_id != '[]') {
@@ -246,13 +250,13 @@ $(document).ready(function() {
                                                                                                                         <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                                     </div>
                                                                                                                     <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                                        <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                                        <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>`);
                                                                     } else {
                                                                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                                     }
                                     } else {
                                         if(major_list != cinema_id) {
@@ -287,16 +291,18 @@ $(document).ready(function() {
                                                                                                                         <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                                                                     </div>
                                                                                                                     <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                                                        <button class="ui red basic button">${showtime[i].show_time}</button>
+                                                                                                                        <button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>`);
                                                                     } else {
                                                                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button">${showtime[i].show_time}</button>`);
+                                                                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<button class="ui red basic button" id="${showtime[i].show_time}">${showtime[i].show_time}</button>`);
                                                                     }
                                     }
+                                    startTime(showtime[i].show_time);
                                 }
+
                             });
             }
         }
@@ -306,3 +312,30 @@ $(document).ready(function() {
 
 
 });
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime(show_time) {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  s = checkTime(s);
+  var current = h + ":" + m + ":" + s;
+  if (show_time < current) {
+    console.log(show_time);
+    $("[id='"+ show_time +"']").attr('disabled', 'disabled');
+  }
+
+//  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+//  t = setTimeout(function() {
+//    startTime()
+//  }, 500);
+}
