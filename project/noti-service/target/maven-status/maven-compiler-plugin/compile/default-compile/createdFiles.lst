@@ -1,0 +1,10 @@
+demo\adapter\MovieAdapter.class
+demo\config\DatabaseConfiguration.class
+demo\NotiRepository.class
+demo\NotiRowMapper.class
+demo\adapter\UserAdapter.class
+demo\NotiController.class
+demo\adapter\Movie.class
+demo\adapter\User.class
+demo\Noti.class
+demo\NotiServiceApplication.class
