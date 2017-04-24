@@ -1,12 +1,14 @@
 package demo;
 
 import javax.servlet.http.HttpSession;
+import java.util.Dictionary;
 
 /**
  * Created by caliver on 4/23/2017 AD.
  */
 public class UserAuthenication {
     private static HttpSession session;
+    private static Dictionary<String ,HttpSession> sessionDictionary;
 
     private UserAuthenication(User user){
         this.session.setAttribute("username", user.getUsername());
@@ -27,10 +29,12 @@ public class UserAuthenication {
         session = null;
     }
 
-    public static HttpSession authorize(User user){
-        if (session == null)
+    public static String authorize(User user){
+        if (session == null) {
             new UserAuthenication(user);
-        return session;
+            sessionDictionary.put(session.getId(), session);
+        }
+        return session.getId();
     }
 
 }

@@ -6,10 +6,10 @@ import demo.adapter.MovieAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 public class UserController {
 
@@ -27,10 +27,9 @@ public class UserController {
         return this.userRepository.getUserData(username);
     }
 
-    @RequestMapping(value = "/login", produces = "aplication/json")
+    @RequestMapping(value = "/login", produces = "application/json")
     public User authorizeUser(@RequestParam(value="username") String username,
-                              @RequestParam(value="password") String password,
-                              HttpServletResponse response) throws IOException {
+                              @RequestParam(value="password") String password) throws IOException {
         return this.userRepository.userLogin(username, password);
     }
 
@@ -43,8 +42,7 @@ public class UserController {
                                @RequestParam(value="gender") String gender,
                                @RequestParam(value="birth_date") String birth_date,
                                @RequestParam(value="email") String email,
-                               @RequestParam(value="noti_status") String noti_status,
-                               HttpServletResponse response) throws IOException {
+                               @RequestParam(value="noti_status") String noti_status) throws IOException {
         this.userRepository.userRegister(username, password, firstname, lastname, gender, birth_date, email, noti_status);
     }
 
