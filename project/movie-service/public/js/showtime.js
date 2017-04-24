@@ -71,7 +71,7 @@ $(document).ready(function() {
                                                                                 <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                             </div>
                                                                             <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                <a href="https://www.google.com/">
+                                                                                <a href="${showtime[i].show_movie_link}">
                                                                                     <button class="ui red basic button" id="${showtime[i].show_time}">
                                                                                         ${showtime[i].show_time}
                                                                                     </button>
@@ -81,13 +81,13 @@ $(document).ready(function() {
                                                                     </div>`);
                     } else {
                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<a href="https://www.google.com/">
+                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<a href="${showtime[i].show_movie_link}">
                                                                                                     <button class="ui red basic button" id="${showtime[i].show_time}">
                                                                                                         ${showtime[i].show_time}
                                                                                                     </button>
                                                                                                  </a>`);
                     }
-                } else {
+
                     if(major_list != cinema_id) {
                         major_list = cinema_id;
                         $('#major-showtime').append(`<div id="${'cinema'+showtime[i].cinema.id}" class="ui divided items" style="padding:14px;">
@@ -120,7 +120,7 @@ $(document).ready(function() {
                                                                                 <div class="ui label"><i class="globe icon"></i>${showtime[i].show_language}</div>
                                                                             </div>
                                                                             <div id="${showtime[i].cinema_id+' '+showtime[i].show_theatre}" class="description">
-                                                                                <a href="https://www.google.com/">
+                                                                                <a href="${showtime[i].show_movie_link}">
                                                                                     <button class="ui red basic button" id="${showtime[i].show_time}">
                                                                                         ${showtime[i].show_time}
                                                                                     </button>
@@ -130,7 +130,7 @@ $(document).ready(function() {
                                                                     </div>`);
                     } else {
                         console.log('#'+showtime[i].cinema_id+' '+showtime[i].show_theatre);
-                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<a href="https://www.google.com/">
+                        $("[id='"+showtime[i].cinema_id+" "+showtime[i].show_theatre+"']").append(`<a href="${showtime[i].show_movie_link}">
                                                                                                       <button class="ui red basic button" id="${showtime[i].show_time}">
                                                                                                           ${showtime[i].show_time}
                                                                                                       </button>
