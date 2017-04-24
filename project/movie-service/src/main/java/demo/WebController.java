@@ -36,4 +36,9 @@ public class WebController {
         model.addAttribute("check", new Check());
         return "index";
     }
+
+    @RequestMapping(value="/login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
 }

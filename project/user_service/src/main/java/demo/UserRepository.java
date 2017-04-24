@@ -50,7 +50,7 @@ public class UserRepository {
                     "FROM User WHERE username=? and password=?";
             User user = this.jdbcTemplate.queryForObject(sql,
                     new Object[]{username, password}, new UserRowMapper());
-            UserAuthenication.authorize(user);
+            //UserAuthenication.authorize(user);
             return user;
         }catch (Exception exception) {
             throw new UserLoginFailedException();
