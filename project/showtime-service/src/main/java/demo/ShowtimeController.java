@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by DELL on 03/04/2560.
@@ -25,6 +28,8 @@ public class ShowtimeController {
     private final ShowtimeRepository showtimeRepository;
     private final MovieAdapter movieAdapter;
     private final CinemaAdapter cinemaAdapter;
+    private Map<Long, Movie> movieMap = new HashMap<>();
+    private Map<Long, Cinema> cinemaMap = new HashMap<>();
 
     @Autowired
     public ShowtimeController(ShowtimeRepository showtimeRepository, MovieAdapter movieAdapter, CinemaAdapter cinemaAdapter){
@@ -38,8 +43,21 @@ public class ShowtimeController {
                                             @RequestParam(value = "cinema") List<String> cinema_id) {
         List<Showtime> showtimeList = this.showtimeRepository.findByMovieIdAndCinemaId(movid_id, cinema_id);
         for (Showtime showtime: showtimeList) {
-            showtime.setCinema(this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id()));
-            showtime.setMovie(this.movieAdapter.getMovieDetail(showtime.getMovie_id()));
+            if (movieMap.containsKey(showtime.getMovie_id())){
+                showtime.setMovie(movieMap.get(showtime.getMovie_id()));
+            } else {
+                Movie movie = this.movieAdapter.getMovieDetail(showtime.getMovie_id());
+                showtime.setMovie(movie);
+                movieMap.put(showtime.getMovie_id(), movie);
+            }
+
+            if (cinemaMap.containsKey(showtime.getCinema_id())){
+                showtime.setCinema(cinemaMap.get(showtime.getCinema_id()));
+            } else {
+                Cinema cinema = this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id());
+                showtime.setCinema(cinema);
+                cinemaMap.put(showtime.getCinema_id(), cinema);
+            }
         }
         return showtimeList;
     }
@@ -49,8 +67,21 @@ public class ShowtimeController {
         List<Showtime> showtimeList = this.showtimeRepository.findByMovieId(movid_id);
 
         for (Showtime showtime: showtimeList) {
-            showtime.setCinema(this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id()));
-            showtime.setMovie(this.movieAdapter.getMovieDetail(showtime.getMovie_id()));
+            if (movieMap.containsKey(showtime.getMovie_id())){
+                showtime.setMovie(movieMap.get(showtime.getMovie_id()));
+            } else {
+                Movie movie = this.movieAdapter.getMovieDetail(showtime.getMovie_id());
+                showtime.setMovie(movie);
+                movieMap.put(showtime.getMovie_id(), movie);
+            }
+
+            if (cinemaMap.containsKey(showtime.getCinema_id())){
+                showtime.setCinema(cinemaMap.get(showtime.getCinema_id()));
+            } else {
+                Cinema cinema = this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id());
+                showtime.setCinema(cinema);
+                cinemaMap.put(showtime.getCinema_id(), cinema);
+            }
         }
         return showtimeList;
     }
@@ -60,8 +91,21 @@ public class ShowtimeController {
         List<Showtime> showtimeList = this.showtimeRepository.findByCinemaId(cinema_id);
 
         for (Showtime showtime: showtimeList) {
-            showtime.setCinema(this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id()));
-            showtime.setMovie(this.movieAdapter.getMovieDetail(showtime.getMovie_id()));
+            if (movieMap.containsKey(showtime.getMovie_id())){
+                showtime.setMovie(movieMap.get(showtime.getMovie_id()));
+            } else {
+                Movie movie = this.movieAdapter.getMovieDetail(showtime.getMovie_id());
+                showtime.setMovie(movie);
+                movieMap.put(showtime.getMovie_id(), movie);
+            }
+
+            if (cinemaMap.containsKey(showtime.getCinema_id())){
+                showtime.setCinema(cinemaMap.get(showtime.getCinema_id()));
+            } else {
+                Cinema cinema = this.cinemaAdapter.getCinemaDetail(showtime.getCinema_id());
+                showtime.setCinema(cinema);
+                cinemaMap.put(showtime.getCinema_id(), cinema);
+            }
         }
         return showtimeList;
     }
