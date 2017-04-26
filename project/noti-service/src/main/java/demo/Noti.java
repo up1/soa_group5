@@ -47,4 +47,14 @@ public class Noti {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.getUsername().equals(((Noti)obj).getUsername());
+    }
+
+    @Override
+    public String toString() {
+        return this.getUsername()+":"+this.getMovie_id()+":"+this.getMovie().getPoster()+":"+this.getMovie().getDescription();
+    }
 }
