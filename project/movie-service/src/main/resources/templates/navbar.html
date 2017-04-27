@@ -5,27 +5,33 @@
     <title>Title</title>
 </head>
 <body>
-<div class="ui secondary menu container centered grid" th:fragment="navbar" style="padding-top: 10px;">
+<div class="ui secondary menu centered grid" th:fragment="navbar">
     <a class="item" href="/">
-        Home
+         Home
     </a>
-    <div class="centered menu">
-        <div class="item" style="margin-right: 100px; margin-left: 100px;">
-            <div class="ui category search">
-                <div class="ui icon input">
-                    <input class="prompt" type="text" placeholder="Search  Movie..."/>
-                    <i class="search icon"></i>
-                </div>
-                <div class="results"></div>
-            </div>
+    <a class="item">
+        Cinema
+    </a>
+    <a class="item">
+        About
+    </a>
+    <a class="item">
+        <div class="ui small image">
+            <img src="https://www.img.in.th/images/1e463d7993d287f625e29af8bdcb4d62.png" border="0" />
         </div>
-        <a class="ui item" href="/login">
-            Login
-        </a>
-        <a class="ui item" href="/register">
-            Register
-        </a>
+    </a>
+    <div class="item">
+        <div class="ui category search">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search  Movie..."/>
+                <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
     </div>
+    <a class="item" href="/login">
+        Login
+    </a>
 </div>
 </body>
 </html>
