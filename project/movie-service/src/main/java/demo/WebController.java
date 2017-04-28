@@ -23,6 +23,7 @@ public class WebController {
     @RequestMapping(value="/movie_desc", method= RequestMethod.GET)
     public String movie_description(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("id", id);
+        model.addAttribute("check", new Check());
         return "movie_description";
     }
 
