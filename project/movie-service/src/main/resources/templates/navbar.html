@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <script src="js/logged.js"></script>
 </head>
 <body>
 <div class="ui secondary menu container centered grid" th:fragment="navbar" style="padding-top: 10px;">
@@ -19,12 +20,16 @@
                 <div class="results"></div>
             </div>
         </div>
-        <a class="ui item" href="/login">
-            Login
-        </a>
-        <a class="ui item" href="/register">
-            Register
-        </a>
+        <div id="to-login-contianer" class="ui item">
+            <a class="ui item" href="/login">
+                Login
+            </a>
+        </div>
+        <div id="to-regis-container" class="ui item">
+            <a class="ui item" href="/register">
+                Register
+            </a>
+        </div>
     </div>
 </div>
 </body>

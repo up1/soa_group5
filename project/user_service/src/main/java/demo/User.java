@@ -15,6 +15,7 @@ public class User {
     private String birth_date;
     private String email;
     private String noti_status;
+    private String token;
 
     public User(){
 
@@ -90,5 +91,13 @@ public class User {
 
     public void setNoti_status(String noti_status) {
         this.noti_status = noti_status;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

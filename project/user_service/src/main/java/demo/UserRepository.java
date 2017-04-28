@@ -1,14 +1,14 @@
 package demo;
 
-import demo.exceptions.UserLoginFailedException;
-import demo.exceptions.UserNotFoundException;
-import demo.exceptions.UserRegisterFailedException;
-import demo.exceptions.UserUpdateFailedException;
+import demo.adapter.Movie;
+import demo.adapter.MovieAdapter;
+import demo.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Repository
@@ -16,8 +16,12 @@ public class UserRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    private MovieAdapter movieAdapter;
 
-    public UserRepository(JdbcTemplate jdbcTemplate) { this.jdbcTemplate = jdbcTemplate; }
+    public UserRepository(JdbcTemplate jdbcTemplate, MovieAdapter movieAdapter) {
+        this.jdbcTemplate = jdbcTemplate;
+        this.movieAdapter = movieAdapter;
+    }
 
     @Transactional(readOnly = true)
     public User getUserData(String username) {
@@ -38,7 +42,7 @@ public class UserRepository {
     }
 
     @Transactional(readOnly = true)
-    public User userLogin(String username, String password) {
+    public Token userLogin(String username, String password) {
         try {
             String sql = "SELECT username, " +
                     "firstname, " +
@@ -50,8 +54,7 @@ public class UserRepository {
                     "FROM User WHERE username=? and password=?";
             User user = this.jdbcTemplate.queryForObject(sql,
                     new Object[]{username, password}, new UserRowMapper());
-            //UserAuthenication.authorize(user);
-            return user;
+            return UserAuthentication.authorize(user);
         }catch (Exception exception) {
             throw new UserLoginFailedException();
         }
@@ -112,6 +115,7 @@ public class UserRepository {
         }
     }
 
+    @Transactional
     public void unlikeMovie (String username, int movie_id){
         try {
             String sql = "DELETE FROM Favourite_list WHERE username=? AND movie_id=?";
@@ -121,16 +125,27 @@ public class UserRepository {
         }
     }
 
-    public List<Integer> getUserLikes(String username){
+
+    public List<Movie> getUserLikes(String username){
         try {
             String sql = "SELECT movie_id FROM Favourite_list WHERE username=?";
-            return this.jdbcTemplate.queryForList(sql, new Object[]{username}, Integer.class);
+            List<Integer> results = this.jdbcTemplate.queryForList(sql, new Object[]{username}, Integer.class);
+            if(results.isEmpty()) {
+                return null;
+            }
+
+            List<Movie> movieList = null;
+
+            for (Integer movie_id : results){
+                movieList.add(movieAdapter.getMovieById(movie_id));
+            }
+            return movieList;
         } catch (Exception e) {
             throw new UserNotFoundException(username);
         }
     }
 
-    public void logout(){
-        UserAuthenication.deleteSession();
+    public void logout(String token){
+        UserAuthentication.deleteSession(token);
     }
 }

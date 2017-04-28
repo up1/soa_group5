@@ -3,6 +3,7 @@ package demo; /**
  */
 import demo.adapter.Movie;
 import demo.adapter.MovieAdapter;
+import demo.exceptions.InvalidTokenException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +15,10 @@ import java.util.List;
 public class UserController {
 
     private final UserRepository userRepository;
-    private final MovieAdapter movieAdapter;
 
     @Autowired
-    public UserController(UserRepository userRepository, MovieAdapter movieAdapter) {
+    public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.movieAdapter = movieAdapter;
     }
 
     @RequestMapping(value = "/user/{username}", produces = "application/json")
@@ -28,7 +27,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", produces = "application/json")
-    public User authorizeUser(@RequestParam(value="username") String username,
+    public Token authorizeUser(@RequestParam(value="username") String username,
                               @RequestParam(value="password") String password) throws IOException {
         return this.userRepository.userLogin(username, password);
     }
@@ -65,34 +64,36 @@ public class UserController {
     }
 
     @GetMapping("/{username}/likes")
-    public List<Movie> getUserLikes(@PathVariable String username){
-        List<Integer> movie_id_list = this.userRepository.getUserLikes(username);
-        List<Movie> movieList = null;
+    public List<Movie> getUserLikes(@PathVariable String username,
+                                    @RequestParam String token){
 
-        if (movie_id_list.isEmpty()){
-            return null;
+        if(UserAuthentication.isValidToken(token)) {
+            throw new InvalidTokenException(token);
         }
 
-        for (Integer movie_id : movie_id_list){
-            movieList.add(movieAdapter.getMovieById(movie_id));
-        }
-
-        return movieList;
+        return this.userRepository.getUserLikes(username);
     }
 
     @PostMapping("/like")
-    public void likeMovie(@RequestParam(value="movie_id") int movie_id) {
-        this.userRepository.likeMovie(UserAuthenication.getSession().getAttribute("username").toString(), movie_id);
+    public void likeMovie(@RequestParam(value="movie_id") int movie_id, String token) {
+        this.userRepository.likeMovie(UserAuthentication.getSession(token).getUsername(), movie_id);
     }
 
     @DeleteMapping("/unlike")
-    public void unlikeMovie(@RequestParam(value="movie_id") int movie_id){
-        this.userRepository.unlikeMovie(UserAuthenication.getSession().getAttribute("username").toString(), movie_id);
+    public void unlikeMovie(@RequestParam(value="movie_id") int movie_id, String token){
+        this.userRepository.unlikeMovie(UserAuthentication.getSession(token).getUsername(), movie_id);
     }
 
-    @PostMapping("/logout")
-    public void logout(){
-        this.userRepository.logout();
+    @PostMapping("/logout/{tokenID}")
+    public void logout(@PathVariable String sessionID){
+        this.userRepository.logout(sessionID);
     }
 
+    @GetMapping("/validate/{tokenID}")
+    public User validateToken(@PathVariable String tokenID) {
+        if(UserAuthentication.isValidToken(tokenID)){
+            return UserAuthentication.getSession(tokenID);
+        }
+        return null;
+    }
 }
