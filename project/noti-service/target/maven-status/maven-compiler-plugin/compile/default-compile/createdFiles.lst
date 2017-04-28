@@ -1,10 +1,11 @@
-demo\adapter\MovieAdapter.class
 demo\config\DatabaseConfiguration.class
+demo\UserAdapter.class
 demo\NotiRepository.class
 demo\NotiRowMapper.class
-demo\adapter\UserAdapter.class
 demo\NotiController.class
-demo\adapter\Movie.class
-demo\adapter\User.class
+demo\Movie.class
+demo\MovieAdapter.class
+demo\User.class
 demo\Noti.class
+demo\NotiNotFoundException.class
 demo\NotiServiceApplication.class

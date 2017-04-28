@@ -100,4 +100,6 @@ public class Movie {
     public void setCover(String cover) {
         this.cover = cover;
     }
+
+
 }

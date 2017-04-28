@@ -17,6 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
 	<script src="js/MovieDetail.js"> </script>
+	<script src="js/search.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/custom.css"/>
 
 	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 	<script
@@ -58,7 +60,11 @@
 						<span id="duration"></span>
 					</div>
 					<div class="col s4">
-						<a href="showtime.html"><button class="waves-effect waves-light btn red">Show Time</button></a>
+						<form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
+							<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
+							<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
+							<button type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -69,34 +75,22 @@
 	</div>
 </div>
 
-<!-- <footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-    </div>
-</footer> -->
-
 <!-- movie id -->
 <div id="movie_id" hidden="true" th:text="${id}"></div>
+
+<script type="text/javascript">
+                    var movie_test_list = [];
+                    var cinema_test_list = [];
+
+                    function go_to_showtime(){
+                    movie_test_list.push(document.getElementById('movie_id').innerHTML);
+                    document.getElementById('selected_movie').value = movie_test_list;
+                    document.getElementById('selected_cinema').value = cinema_test_list;
+
+                    console.log(document.getElementById('selected_movie').value);
+                    console.log(document.getElementById('selected_cinema').value);
+                    }
+</script>
 
 </body>
 </html>

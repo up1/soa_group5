@@ -11,10 +11,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
 
-    <script src="js/indexAjax.js"></script>
     <script src="js/movieAjax.js"></script>
     <script src="js/cinemaAjax.js"></script>
-    <script src="js/logged.js"></script>
+    <script src="js/search.js"></script>
 
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
@@ -47,5 +46,46 @@
     </div>
 </div>
 
+
+<script th:inline="javascript">
+    $(document).ready(function() {
+
+
+    $.ajax({
+
+        url: "http://localhost:9001/movies"
+
+    }).then(function(data, status, jqxhr) {
+
+        $.each(data, function(i){
+            var movie_test_list = [];
+            var cinema_test_list = [];
+             $('#movie-container').append('<div id="' + data[i].id +'" class="movie-content column"></div>');
+
+            $('#'+data[i].id).append(`
+                                                <div class="ui segment card">
+
+                                                        <a href="/movie_desc?id=${data[i].id}" class="image">
+                                                            <img src="${ data[i].poster }"/>
+                                                        </a>
+                                                            <p class="name_en"> ${ data[i].name_en } </p>
+                                                            <p class="name_th"> ${ data[i].name_th} </p>
+                                                            <p class="release_date"> ${ data[i].release_date} </p>
+                                                            <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
+                                                            	<input type="hidden" id="movie${data[i].id}" th:field="*{selected_movie}"/>
+                                                            	<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
+                                                            	<button type="submit" class="ui button" style="width:100%;">Check Showtimes</button>
+                                                            </form>
+                                                </div>`);
+            movie_test_list.push(data[i].id);
+            document.getElementById("movie"+data[i].id).value = movie_test_list;
+            document.getElementById('selected_cinema').value = cinema_test_list;
+            console.log(document.getElementById("movie"+data[i].id).value);
+            console.log(document.getElementById('selected_cinema').value);
+        });
+
+    });
+});
+</script>
 </body>
 </html>

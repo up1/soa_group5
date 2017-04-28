@@ -11,7 +11,6 @@ $(document).ready(function() {
         }).then(function(data, status, jqxhr){
             localStorage.setItem("tokenID", data.tokenID);
             window.location.href = "/";
-            console.log(jqxhr);
         });
     })
 });
