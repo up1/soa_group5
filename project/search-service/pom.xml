@@ -78,7 +78,7 @@
     </dependencies>
 
     <build>
-        <finalName>showtime-service</finalName>
+        <finalName>search-service</finalName>
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
