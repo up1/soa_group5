@@ -59,7 +59,11 @@
 							<h4 id="duration" style="margin: 0;"></h4>
 						</div>
 						<div class="four wide column right">
-							<a href="showtime.html"><button class="ui red button">Show Time</button></a>
+							<form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
+								<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
+								<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
+								<button type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -74,6 +78,20 @@
 
 	<!-- movie id -->
 	<div id="movie_id" hidden="true" th:text="${id}"></div>
+
+	<script type="text/javascript">
+                    var movie_test_list = [];
+                    var cinema_test_list = [];
+
+                    function go_to_showtime(){
+                    movie_test_list.push(document.getElementById('movie_id').innerHTML);
+                    document.getElementById('selected_movie').value = movie_test_list;
+                    document.getElementById('selected_cinema').value = cinema_test_list;
+
+                    console.log(document.getElementById('selected_movie').value);
+                    console.log(document.getElementById('selected_cinema').value);
+                    }
+</script>
 
 </body>
 

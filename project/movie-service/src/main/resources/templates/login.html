@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
     <!--<link rel="stylesheet" type="text/css" href="stylesheet.css">-->
@@ -11,28 +11,8 @@
     <script src="js/user.js"></script>
 </head>
 <body background="bg.jpg">
-<div class="ui secondary menu container centered grid" style="padding-top: 10px;">
-    <a class="item" href="/">
-        Home
-    </a>
-    <div class="centered menu">
-        <div class="item" style="margin-right: 100px; margin-left: 100px;">
-            <div class="ui category search">
-                <div class="ui icon input">
-                    <input class="prompt" type="text" placeholder="Search  Movie..."/>
-                    <i class="search icon"></i>
-                </div>
-                <div class="results"></div>
-            </div>
-        </div>
-        <a class="ui item" href="/login">
-            Login
-        </a>
-        <a class="ui item" href="/register">
-            Register
-        </a>
-    </div>
-</div>
+<!-- NavBar-->
+<div th:replace="navbar :: navbar"></div>
 
 <div class="ui grid centered">
     <div class="ui card grid five wide column">
