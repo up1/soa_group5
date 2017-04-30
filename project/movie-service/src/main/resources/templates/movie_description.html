@@ -62,7 +62,7 @@
 							<form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
 								<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
 								<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-								<button type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
+								<button id="check_showtime_button" type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
 							</form>
 						</div>
 					</div>

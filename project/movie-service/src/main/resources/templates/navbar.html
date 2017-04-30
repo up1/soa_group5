@@ -7,13 +7,13 @@
 </head>
 <body>
 <div class="ui secondary menu centered grid" th:fragment="navbar">
-    <a class="item" href="/">
+    <a class="item" href="/" id="homePage">
          Home
     </a>
-    <a class="item" href="/cinema">
+    <a class="item" href="/cinema" id="cinemaPage">
         Cinema
     </a>
-    <a class="item">
+    <a class="item" href="/about" id="aboutPage">
         About
     </a>
     <a class="item">
@@ -24,18 +24,18 @@
     <div class="item">
         <div class="ui category search">
             <div class="ui icon input">
-                <input class="prompt" type="text" placeholder="Search  Movie..."/>
+                <input id="search" class="prompt" type="text" placeholder="Search  Movie..."/>
                 <i class="search icon"></i>
             </div>
             <div class="results"></div>
         </div>
         <div id="to-login-contianer" class="ui item">
-            <a class="ui item" href="/login">
+            <a class="ui item" href="/login" id="loginPage">
                 Login
             </a>
         </div>
         <div id="to-regis-container" class="ui item">
-            <a class="ui item" href="/register">
+            <a class="ui item" href="/register" id="registerPage">
                 Register
             </a>
         </div>

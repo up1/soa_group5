@@ -66,7 +66,7 @@
             $('#'+data[i].id).append(`
                                                 <div class="ui segment card">
 
-                                                        <a href="/movie_desc?id=${data[i].id}" class="image">
+                                                        <a id="moviedes${data[i].id}" href="/movie_desc?id=${data[i].id}" class="image">
                                                             <img src="${ data[i].poster }"/>
                                                         </a>
                                                             <p class="name_en"> ${ data[i].name_en } </p>
@@ -75,7 +75,7 @@
                                                             <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
                                                             	<input type="hidden" id="movie${data[i].id}" th:field="*{selected_movie}"/>
                                                             	<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-                                                            	<button type="submit" class="ui button" style="width:100%;">Check Showtimes</button>
+                                                            	<button type="submit" id="movieshow${data[i].id}" class="ui button" style="width:100%;">Check Showtimes</button>
                                                             </form>
                                                 </div>`);
             movie_test_list.push(data[i].id);
