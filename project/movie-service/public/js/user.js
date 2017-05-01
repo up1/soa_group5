@@ -20,6 +20,7 @@ $(document).ready(function() {
         if($('input[name="noti"]:checked').val() == 'on') {
             noti = 'yes';
         } else {
+            console.log(noti);
             noti = 'no';
         }
 
