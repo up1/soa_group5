@@ -28,20 +28,20 @@
 	<!-- NavBar-->
 	<div th:replace="navbar :: navbar"></div>
 
-	<img id="cover" />
+	<img id="cover" style="width: 100%"/>
 
 	<!--Movie Description-->
-	<div class="ui container" style=" padding: 20px; font-family: 'Kanit', sans-serif;">
+	<div class="ui container" style="padding: 20px;">
 		<div class="ui grid centered">
 			<div class="row">
 				<div class="five wide column">
-					<img id="poster" />
+					<img id="poster"/>
 				</div>
 				<div class="eleven wide column" style="padding-left: 30px;">
 					<div class="ui grid">
 						<div class="twelve wide column">
-							<h1 id="name_en"></h1>
-							<h2 id="name_th"></h2>
+							<h1 class="ui header" id="name_en"></h1>
+							<h2 class="ui header" id="name_th"></h2>
 						</div>
 						<div class="four wide column">
 							<br/><br/><br/>
@@ -62,16 +62,23 @@
 							<form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
 								<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
 								<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-								<button id="check_showtime_button" type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
+								<button type="submit" onclick="go_to_showtime()" class="ui button red">Check Showtimes</button>
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="ui centered">
-			<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
+
+		<div class="ui top attached tabular menu">
+			<div class="active item"><div class="ui header"><i class="video play icon"></i><div class="content">Trailer</div></div></div>
+			</div>
+			<div class="ui bottom attached active tab segment">
+			<div class="ui centered grid" style="padding: 10px">
+				<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
+			</div>
 		</div>
+
 	</div>
 	<!---->
 
