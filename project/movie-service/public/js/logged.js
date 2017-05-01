@@ -6,7 +6,7 @@ $(document).ready(function () {
     if (tokenID !== null) {
         $.ajax({
             "url": "http://localhost:9004/validate/" + tokenID
-        }).then(function (data, status, jqxhr) {
+        }).then(function (data) {
             if (data !== null) {
                 //noinspection JSAnnotator
                 $('#to-login-contianer').html(
@@ -21,10 +21,12 @@ $(document).ready(function () {
 });
 
 $(document).ready(function(){
-    $("#logout").click(function() {
+    $("#to-regis-container").click(function() {
         $.ajax({
-            "url": "http;//localhost:9004/logout/" + localStorage.getItem("tokenID")
-        }).then(function (data, status, jqxhr) {
+            "type": "POST",
+            "url": "http://localhost:9004/logout/",
+            "data": {"tokenID":localStorage.getItem("tokenID")}
+        }).then(function (status, jqxhr) {
             localStorage.removeItem("tokenID");
             window.location.href = window.location.pathname;
         });
