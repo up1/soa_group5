@@ -11,7 +11,7 @@ public class MovieAdapter {
 
     public Movie getMovieById(long movieId) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:9001/movie?id=" + movieId;
+        String url = "http://localhost:9001/movie?movie_id=" + movieId;
         return restTemplate.getForObject(url, Movie.class);
     }
 }

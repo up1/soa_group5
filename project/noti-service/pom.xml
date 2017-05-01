@@ -71,10 +71,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.moelholm</groupId>
+            <artifactId>prometheus-spring-boot-starter</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
-
-
     <build>
         <finalName>noti-service</finalName>
         <plugins>
