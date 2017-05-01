@@ -15,7 +15,7 @@ public class Token {
         this.validation = true;
     }
 
-    public void setToken(String tokenID) {
+    public void setTokenID(String tokenID) {
         this.tokenID = tokenID;
     }
 
