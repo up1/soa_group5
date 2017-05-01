@@ -34,18 +34,6 @@ public class NotiRepository {
         }catch (Exception exception) {
          throw new NotiNotFoundException(userName);
         }
-    }
-
-
-    @Transactional(readOnly = true)
-    public List<Noti> findByUsernameMovieID(String userName, int movie_id) {
-        try {
-            String sql = "SELECT * FROM Favourite_list WHERE username=? AND movie_id=?";
-            return  this.jdbcTemplate.query(sql,
-                    new Object[]{userName,movie_id}, new NotiRowMapper());
-        }catch (Exception exception) {
-            throw new NotiNotFoundException(userName);
-        }
 
     }
 }
