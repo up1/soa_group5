@@ -24,9 +24,17 @@ public class MovieRepository {
     }
 
     @Transactional(readOnly = true)
-    public List<Movie> findAll() {
+    public List<Movie> findCurrent() {
 
         List<Movie> movieList = this.jdbcTemplate.query("SELECT * FROM Movie WHERE movie_status='onshow' ORDER BY movie_release_date DESC", new MovieRowMapper());
+
+        return movieList;
+    }
+
+    @Transactional(readOnly = true)
+    public List<Movie> findComingSoon() {
+
+        List<Movie> movieList = this.jdbcTemplate.query("SELECT * FROM Movie WHERE movie_status='coming_soon' ORDER BY movie_release_date DESC", new MovieRowMapper());
 
         return movieList;
     }

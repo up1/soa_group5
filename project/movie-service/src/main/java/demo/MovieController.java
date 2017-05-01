@@ -27,7 +27,11 @@ public class MovieController {
 
     @RequestMapping("/movies")
     public List<Movie> getAllmovie() {
-        return this.movieRepository.findAll();
+        return this.movieRepository.findCurrent();
     }
 
+    @RequestMapping("/coming")
+    public List<Movie> getComing() {
+        return this.movieRepository.findComingSoon();
+    }
 }

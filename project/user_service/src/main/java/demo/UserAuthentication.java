@@ -9,10 +9,12 @@ import java.util.Hashtable;
 public class UserAuthentication {
 
     private static Token token;
+    private static Dictionary<String, Token> tokenList = new Hashtable<>();
     private static Dictionary<String , User> sessionDictionary = new Hashtable<>();
 
     private UserAuthentication(User user){
-        this.token = new Token();
+        token = new Token();
+        tokenList.put(token.getTokenID(), token);
         sessionDictionary.put(token.getTokenID(), user);
     }
 
@@ -21,7 +23,7 @@ public class UserAuthentication {
     }
 
     public static void deleteSession(String tokenID){
-        token.setValidation(false);
+        tokenList.get(tokenID).setValidation(false);
         sessionDictionary.remove(tokenID);
         token = null;
     }
@@ -32,9 +34,6 @@ public class UserAuthentication {
     }
 
     public static boolean isValidToken(String tokenID) {
-        if (tokenID == null || sessionDictionary.get(tokenID) == null || token.getValidation() == false) {
-            return false;
-        }
-        return true;
+        return !(tokenID == null || sessionDictionary.get(tokenID) == null || !tokenList.get(tokenID).getValidation());
     }
 }

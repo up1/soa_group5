@@ -2,7 +2,6 @@ package demo; /**
  * Created by Administrator on 6/3/2560.
  */
 import demo.adapter.Movie;
-import demo.adapter.MovieAdapter;
 import demo.exceptions.InvalidTokenException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -84,9 +83,9 @@ public class UserController {
         this.userRepository.unlikeMovie(UserAuthentication.getSession(token).getUsername(), movie_id);
     }
 
-    @PostMapping("/logout/{tokenID}")
-    public void logout(@PathVariable String sessionID){
-        this.userRepository.logout(sessionID);
+    @PostMapping("/logout")
+    public void logout(@RequestParam String tokenID){
+        this.userRepository.logout(tokenID);
     }
 
     @GetMapping("/validate/{tokenID}")

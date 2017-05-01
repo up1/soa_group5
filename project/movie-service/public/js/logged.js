@@ -6,9 +6,7 @@ $(document).ready(function () {
     if (tokenID !== null) {
         $.ajax({
             "url": "http://localhost:9004/validate/" + tokenID
-        }).then(function (data, status, jqxhr) {
-            console.log(jqxhr);
-            console.log(data);
+        }).then(function (data) {
             if (data !== null) {
                 //noinspection JSAnnotator
                 $('#to-login-contianer').html(
@@ -20,4 +18,17 @@ $(document).ready(function () {
             }
         });
     }
+});
+
+$(document).ready(function(){
+    $("#to-regis-container").click(function() {
+        $.ajax({
+            "type": "POST",
+            "url": "http://localhost:9004/logout/",
+            "data": {"tokenID":localStorage.getItem("tokenID")}
+        }).then(function (status, jqxhr) {
+            localStorage.removeItem("tokenID");
+            window.location.href = window.location.pathname;
+        });
+    });
 });

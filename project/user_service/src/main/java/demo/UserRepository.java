@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Repository
@@ -146,6 +145,9 @@ public class UserRepository {
     }
 
     public void logout(String token){
+        if (token == null){
+            throw new InvalidTokenException(null);
+        }
         UserAuthentication.deleteSession(token);
     }
 }
