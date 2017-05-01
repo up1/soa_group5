@@ -22,7 +22,7 @@ public class NotiRepository {
     @Transactional(readOnly = true)
     public List<Noti> getAllNoti(){
         String sql = "Select * from Favourite_list";
-        return this.jdbcTemplate.query(sql,new NotiRowMapper());
+        return this.jdbcTemplate.query(sql,new Object[]{},new NotiRowMapper());
     }
 
     @Transactional(readOnly = true)
@@ -36,7 +36,6 @@ public class NotiRepository {
         }
     }
 
-
     @Transactional(readOnly = true)
     public List<Noti> findByUsernameMovieID(String userName, int movie_id) {
         try {
@@ -48,4 +47,6 @@ public class NotiRepository {
         }
 
     }
+
+
 }
