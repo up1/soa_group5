@@ -8,6 +8,7 @@ public class Noti {
 
     private String username;
     private int movie_id;
+    private String status;
     private User user;
     private Movie movie;
 
@@ -15,6 +16,13 @@ public class Noti {
 
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getUsername() {
         return username;
@@ -55,6 +63,6 @@ public class Noti {
 
     @Override
     public String toString() {
-        return this.getUsername()+":"+this.getMovie_id()+":"+this.getMovie().getPoster()+":"+this.getMovie().getDescription();
+        return this.getUsername()+":"+this.getMovie_id();
     }
 }

@@ -11,6 +11,7 @@ public class NotiRowMapper implements RowMapper<Noti> {
         Noti noti = new Noti();
         noti.setUsername(resultSet.getString("username"));
         noti.setMovie_id(resultSet.getInt("movie_id"));
+        noti.setStatus(resultSet.getString("status"));
         return noti;
     }
 }
