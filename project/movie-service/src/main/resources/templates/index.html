@@ -14,15 +14,22 @@
     <script src="js/movieAjax.js"></script>
     <script src="js/cinemaAjax.js"></script>
     <script src="js/search.js"></script>
-
+    <script src="js/logged.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
-    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"/> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
+    <!-- 2. Add images to <div class="fotorama"></div>. -->
 
     <title> ShowtimeTH </title>
 </head>
@@ -31,7 +38,12 @@
 <div th:replace="navbar :: navbar"></div>
 <!--Header pic-->
 <div class="ui centered grid" style="padding-bottom: 20px; ">
-    <img src="test1.jpeg"/></div>
+    <div class="fotorama" data-autoplay="true" data-loop="true">
+        <img src="test1.jpeg"/>
+        <img src="test1.jpeg"/>
+        <img src="test1.jpeg"/>
+    </div>
+</div>
 <!--Check Showtime-->
 <div th:replace="check_showtime :: check_showtime"></div>
 
@@ -65,7 +77,7 @@
             $('#'+data[i].id).append(`
                                                 <div class="ui segment card">
 
-                                                        <a href="/movie_desc?id=${data[i].id}" class="image">
+                                                        <a id="moviedes${data[i].id}" href="/movie_desc?id=${data[i].id}" class="image">
                                                             <img src="${ data[i].poster }"/>
                                                         </a>
                                                             <p class="name_en"> ${ data[i].name_en } </p>
@@ -74,7 +86,7 @@
                                                             <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
                                                             	<input type="hidden" id="movie${data[i].id}" th:field="*{selected_movie}"/>
                                                             	<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-                                                            	<button type="submit" class="ui button" style="width:100%;">Check Showtimes</button>
+                                                            	<button type="submit" id="movieshow${data[i].id}" class="ui button" style="width:100%;">Check Showtimes</button>
                                                             </form>
                                                 </div>`);
             movie_test_list.push(data[i].id);

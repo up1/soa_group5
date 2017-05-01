@@ -29,8 +29,8 @@
             <div class="ui container">
 
                 <div class="ui tabular menu">
-                    <div class="item active" data-tab="tab-name">Major</div>
-                    <div class="item" data-tab="tab-name2">SF</div>
+                    <div id="major" class="item active" data-tab="tab-name">Major</div>
+                    <div id="sf" class="item" data-tab="tab-name2">SF</div>
                 </div>
                 <div class="ui tab active" data-tab="tab-name">
                     <!-- Tab Content !-->
@@ -97,12 +97,12 @@
     </div>
     <!-- Dropdown -->
     <div class="ui container">
-        <button class="ui button" onclick="showMovieToSelect();">Select Movie</button>
-        <button class="ui button" onclick="showCinemaToSelect();">Select Cinemas</button>
+        <button id="select_movie_button" class="ui button" onclick="showMovieToSelect();">Select Movie</button>
+        <button id="select_cinema_button" class="ui button" onclick="showCinemaToSelect();">Select Cinemas</button>
         <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
             <input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
             <input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-            <button type="submit" onclick="go_to_showtime()" class="ui button">Check Showtimes</button>
+            <button type="submit" id="check_showtime_button" onclick="go_to_showtime()" class="ui button">Check Showtimes</button>
         </form>
     </div>
     <script type="text/javascript">

@@ -38,6 +38,12 @@ public class WebController {
         return "index";
     }
 
+    @RequestMapping(value = "/cinema", method= RequestMethod.GET)
+    public String cinema(Model model) {
+        model.addAttribute("check", new Check());
+        return "cinema";
+    }
+
     @RequestMapping(value="/login", method = RequestMethod.GET)
     public String login() {
         return "login";
