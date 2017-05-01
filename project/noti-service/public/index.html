@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Hello CORS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="hello.js"></script>
-</head>
 
+    <meta charset="UTF-8"/>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script src="js/allnoti.js"></script>
+
+
+
+    <title> Notification </title>
+</head>
 <body>
-<div>
-    <p class="firstname">The firstname is </p>
-    <p class="lastname">The lastname is </p>
-</div>
+
+<table class="responsive-table" id="table">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Movie_id</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+
+    <script>
+        <tr>
+        <th id="username"></th>
+        <th id="movie_id"></th>
+        </tr>
+    </script>
+
+    </tbody>
+</table>
+
 </body>
 </html>
