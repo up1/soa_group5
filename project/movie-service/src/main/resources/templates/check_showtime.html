@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <script src="js/logged.js"></script>
 </head>
 <body>
 <!-- Movie&Cinema dropdown -->
@@ -97,34 +98,6 @@
     </div>
     <!-- Dropdown -->
     <div class="ui container">
-      <div class="ui centered grid">
-        <div class="four wide column">
-          <div class="ui medium image">
-            <img src="https://www.img.in.th/images/084edf95a94bf822e81f99d2a47b23ca.png" border="0"/>
-          </div>
-        </div>
-        <div class="nine wide column" style="padding-top: 25px; text-align: center;">
-          <button class="ui red right labeled icon button" style="margin: 3px;" id="select_movie_button" onclick="showMovieToSelect();">
-            <i class="right grid layout icon"></i>
-            Select Movie
-          </button>
-          <button class="ui red right labeled icon button" style="margin: 3px;" id="select_cinema_button" onclick="showCinemaToSelect();">
-            <i class="right grid layout icon"></i>
-            Select Cinema
-          </button>
-            <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
-                <input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
-                <input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-                <button type="submit" id="check_showtime_button" onclick="go_to_showtime()" class="ui red right labeled icon button" style="margin: 3px;">
-                    <i class="arrow right icon"></i>
-                    Check Showtimes
-                </button>
-            </form>
-        </div>
-      </div>
-    </div>
-
-    <!--<div class="ui container">
         <button id="select_movie_button" class="ui button" onclick="showMovieToSelect();">Select Movie</button>
         <button id="select_cinema_button" class="ui button" onclick="showCinemaToSelect();">Select Cinemas</button>
         <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
@@ -132,7 +105,7 @@
             <input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
             <button type="submit" id="check_showtime_button" onclick="go_to_showtime()" class="ui button">Check Showtimes</button>
         </form>
-    </div>-->
+    </div>
     <script type="text/javascript">
                     var movie_test_list = [];
                     var cinema_test_list = [];
