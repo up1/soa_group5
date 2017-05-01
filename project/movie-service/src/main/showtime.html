@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="css/custom.css"/>-->
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+    <script type="text/javascript" th:src="@{js/showtime.js}"></script>
+    <script type="text/javascript" th:src="@{js/movieAjax.js}"></script>
+    <script type="text/javascript" th:src="@{js/cinemaAjax.js}"></script>
+    <script type="text/javascript" th:src="@{js/search.js}"></script>
+    <script src="js/logged.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <title> ShowtimeTH </title>
+</head>
+<body>
+    <!--Movie&Cinema list-->
+    <div hidden="true" id="movie_id" th:text="${check.selected_movie}"></div>
+    <div hidden="true" id="cinema_id" th:text="${check.selected_cinema}"></div>
+
+    <!-- NavBar-->
+    <div th:replace="navbar :: navbar"></div>
+    <!--Header pic-->
+    <div class="ui centered grid" style="padding-bottom: 20px; ">
+        <img src="test1.jpeg"/></div>
+
+    <script type="text/javascript">
+                    var movie_test_list = [];
+                    var cinema_test_list = [];
+                    function test_select_movie(id){
+                        var movie_test = document.getElementById('mo-'+id);
+                        if(movie_test_list.includes(id)){
+                        var position = movie_test_list.indexOf(id);
+                        movie_test_list.splice(position, 1);
+                        movie_test.className = 'ui segment card';
+                    } else {
+                        movie_test_list.push(id);
+                        movie_test.className += ' selected';
+                    }
+                    console.log(movie_test_list);
+                    }
+                    function test_select_cinema(id){
+                        var cinema_test = document.getElementById('ci-'+id);
+                        if(cinema_test_list.includes(id)){
+                        var position = cinema_test_list.indexOf(id);
+                        cinema_test_list.splice(position, 1);
+                        cinema_test.className = 'ui segment card';
+                    } else {
+                        cinema_test_list.push(id);
+                        cinema_test.className += ' selected';
+                    }
+                    console.log(cinema_test_list);
+                    }
+                    function go_to_showtime(){
+                    document.getElementById('selected_movie').value = movie_test_list;
+                    document.getElementById('selected_cinema').value = cinema_test_list;
+                    console.log(document.getElementById('selected_movie').value);
+                    console.log(document.getElementById('selected_cinema').value);
+                    console.log('test');
+                }
+
+
+
+</script>
+    <!--<p class="cinema_name"></p>-->
+    <!--Check Showtime-->
+    <div th:replace="check_showtime :: check_showtime"></div>
+
+    <!--Showtime-->
+    <div class="ui container">
+        <div class="item">
+            <div class="ui tabular menu">
+                <div class="item active" data-tab="tab-name">Major</div>
+                <div class="item" data-tab="tab-name2">SF</div>
+            </div>
+            <div class="ui tab active" data-tab="tab-name">
+                <!-- Tab Content !-->
+                <div id="major-showtime" class="ui grid centered">
+
+                </div>
+            </div>
+            <div class="ui tab" data-tab="tab-name2">
+                <!-- Tab Content !-->
+                <div id="sf-showtime" class="ui grid centered">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer-->
+    <div class="ui centered grid">
+        <div th:replace="footer :: footer"></div>
+    </div>
+
+    <script>
+                    function showMovieToSelect(){
+                       $('.ui.modal.movie').modal('show');
+                    }
+                    function showCinemaToSelect(){
+                        $('.ui.modal.cinema').modal('show');
+                    }
+                    $('.tabular.menu .item').tab();
+
+</script>
+</body>
+</html>

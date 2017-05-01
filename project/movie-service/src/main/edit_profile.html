@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="js/edit.js"></script>
+    <script src="js/logged.js"></script>
+</head>
+<body>
+<!-- NavBar-->
+<div th:replace="navbar :: navbar"></div>
+
+<br/><br/><br/><br/><br/>
+
+<div class="ui grid centered">
+    <div class="ui card grid eight wide column">
+        <form class="ui form">
+            <h2 class="ui dividing header centered" style="padding: 10px;">Edit Profile</h2>
+            <div class="two fields" style="padding-top: 10px;">
+                <div class="required field">
+                    <label>Username</label>
+                    <input type="text" id="username" name="register[username]" placeholder="Username"/>
+                </div>
+                <div class="inline fields" style="margin-top: 30px; margin-left: 20px;">
+                    <label>Gender</label>
+                    <div class=" field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" id="male" name="gender" checked="" tabindex="0" value="male" class="hidden"/>
+                            <label>Male</label>
+                        </div>
+                    </div>
+                    <div class=" field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" id="female" name="gender" tabindex="0" value="female" class="hidden"/>
+                            <label>Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="required field">
+                    <label>First Name</label>
+                    <input type="text" id="firstname" name="register[first-name]" placeholder="First Name"/>
+                </div>
+                <div class="required field">
+                    <label>Last Name</label>
+                    <input type="text" id="lastname" name="register[last-name]" placeholder="Last Name"/>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="required field">
+                    <label>E-mail</label>
+                    <input type="email" id="email" name="register[email]" placeholder="E-mail"/>
+                </div>
+                <div class="required field">
+                    <label>Birth Date</label>
+                    <input type="date" id="birthday" name="dateExpire" placeholder="dd/mm/yyyy"/>
+                </div>
+            </div>
+            <div class="ui checked checkbox">
+                <input id="noticheck" type="checkbox" checked="" name="noti"/>
+                <label>Do you want to get notifications?</label>
+            </div>
+            <div id="update-button" class="ui button centered grid red" style="margin: 20px; padding: 15px; margin-left:  180px; margin-right: 180px;" tabindex="0" type="submit">Update</div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer-->
+<div class="ui centered grid">
+    <div th:replace="footer :: footer"></div>
+</div>
+
+<script>
+            $('.ui.radio.checkbox')
+            .checkbox();
+
+            $('.message .close')
+              .on('click', function() {
+                $(this)
+                  .closest('.message')
+                  .transition('fade')
+                ;
+              })
+            ;
+        </script>
+</body>
+</html>
