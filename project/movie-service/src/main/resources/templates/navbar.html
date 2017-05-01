@@ -6,7 +6,41 @@
     <script src="js/logged.js"></script>
 </head>
 <body>
-<div class="ui secondary menu centered grid" th:fragment="navbar">
+    <div class="ui grid centered">
+      <div class="ui secondary menu" style=" padding-left:100px; padding-right: 150px;" th:fragment="navbar">
+        <div class="left menu">
+            <a class="item">
+              <div class="ui small image" href="/">
+                <img src="https://www.img.in.th/images/1e463d7993d287f625e29af8bdcb4d62.png" border="0" />
+              </div>
+            </a>
+        <div class="right menu">
+          <a class="item" href="/" id="homePage">
+              Home
+          </a>
+          <a class="item" href="/Movie" id="moviePage">
+              Movie
+          </a>
+          <div class="ui item">
+              <div class="ui category search">
+                <div class="ui icon input">
+                  <input id="search" class="prompt" type="text" placeholder="Search  Movie..." />
+                  <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+          </div>
+          <a class="ui item" href="/login" id="loginPage">
+              Login
+          </a>
+          <a class="ui item" href="/register" id="registerPage">
+              Register
+          </a>
+        </div>
+      </div>
+    </div>
+<!--<div class="ui secondary menu centered grid" th:fragment="navbar">
     <a class="item" href="/" id="homePage">
          Home
     </a>
@@ -17,7 +51,7 @@
         About
     </a>
     <a class="item">
-        <div class="ui small image">
+        <div class="ui small image" href="/">
             <img src="https://www.img.in.th/images/1e463d7993d287f625e29af8bdcb4d62.png" border="0" />
         </div>
     </a>
@@ -40,6 +74,6 @@
             </a>
         </div>
     </div>
-</div>
+</div>-->
 </body>
 </html>

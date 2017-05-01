@@ -7,10 +7,10 @@ $(document).ready(function () {
         $.ajax({
             "url": "http://localhost:9004/validate/" + tokenID
         }).then(function (data) {
-            if (data !== null) {
+            if (data !== null && data.username !== undefined) {
                 //noinspection JSAnnotator
                 $('#to-login-contianer').html(
-                    `<a id="to-user" class="ui item" href="/user/` + data.username + `">
+                    `<a id="to-user" class="ui item" href="/edit">
                     Welcome, ` + data.username + `:) </a>`);
                 $('#to-regis-container').html(
                     `<a id="logout" class="ui item">
