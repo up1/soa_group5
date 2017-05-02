@@ -15,7 +15,7 @@
     <script src="js/cinemaAjax.js"></script>
     <script src="js/search.js"></script>
     <script src="js/logged.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/custom.css"/>-->
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
 
@@ -35,7 +35,7 @@
 </head>
 <body>
 <!-- NavBar-->
-<div class="ui grid centered">
+<div class="ui centered grid">
     <div th:replace="navbar :: navbar"></div>
 </div>
 <!--Header pic-->
@@ -50,17 +50,29 @@
 <!--Check Showtime-->
 <div th:replace="check_showtime :: check_showtime"></div>
 
-<!--<p class="cinema_name"></p>-->
 
 <!-- Movie -->
-<div class="ui grid centered">
-    <div class="ui card twelve wide column centered">
-        <div id="movie-container" class="ui three column grid">
+<div class="ui centered grid">
+    <div id="movie-container" class="ui four link cards centered">
 
-        </div>
     </div>
 </div>
 
+<div class="ui grid centered" style="padding: 40px;">
+    <div class="ui block header  inverted" style="padding-left: 500px; padding-right: 500px;">
+        <h3>COMING SOON</h3>
+    </div>
+</div>
+<div class="ui centered grid">
+    <div id="coming-movie-container" class="ui four link cards centered" style="padding-bottom: 30px;">
+
+    </div>
+</div>
+
+<!-- Footer-->
+<div class="ui centered grid">
+    <div th:replace="footer :: footer"></div>
+</div>
 
 <script th:inline="javascript">
     $(document).ready(function() {
@@ -75,23 +87,25 @@
         $.each(data, function(i){
             var movie_test_list = [];
             var cinema_test_list = [];
-             $('#movie-container').append('<div id="' + data[i].id +'" class="movie-content column"></div>');
+             $('#movie-container').append('<div id="' + data[i].id +'" class="ui movie-content column"></div>');
 
-            $('#'+data[i].id).append(`
-                                                <div class="ui segment card">
-
-                                                        <a id="moviedes${data[i].id}" href="/movie_desc?id=${data[i].id}" class="image">
+            $('#'+data[i].id).append(`          <a id="moviedes${data[i].id}" href="/movie_desc?id=${data[i].id}">
+                                                <div class="ui card">
+                                                        <div class="ui image mono">
                                                             <img src="${ data[i].poster }"/>
-                                                        </a>
-                                                            <p class="name_en"> ${ data[i].name_en } </p>
-                                                            <p class="name_th"> ${ data[i].name_th} </p>
-                                                            <p class="release_date"> ${ data[i].release_date} </p>
+                                                        </div>
+                                                        <div class="ui content">
+                                                            <div class="ui header name_en">${ data[i].name_en }</div>
+                                                            <div class="ui meta name_th"><a>${ data[i].name_th}</a></div>
+                                                            <div class="ui description release_date"><span>${ data[i].release_date}</span></div>
+                                                        </div>
+
                                                             <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
                                                             	<input type="hidden" id="movie${data[i].id}" th:field="*{selected_movie}"/>
                                                             	<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-                                                            	<button type="submit" id="movieshow${data[i].id}" class="ui button" style="width:100%;">Check Showtimes</button>
+                                                                <button type="submit" id="movieshow${data[i].id}" class="ui red bottom attached right labeled icon button" style="width:100%;"><i class="arrow right icon"></i>Check Showtimes</button>                          	
                                                             </form>
-                                                </div>`);
+                                                </div></a>`);
             movie_test_list.push(data[i].id);
             document.getElementById("movie"+data[i].id).value = movie_test_list;
             document.getElementById('selected_cinema').value = cinema_test_list;
@@ -99,8 +113,65 @@
             console.log(document.getElementById('selected_cinema').value);
         });
 
+
+        $.ajax({
+
+        url: "http://localhost:9001/coming"
+
+    }).then(function(data, status, jqxhr) {
+
+        $.each(data, function(i){
+            var movie_test_list = [];
+            var cinema_test_list = [];
+             $('#coming-movie-container').append('<div id="' + data[i].id +'" class="ui movie-content column"></div>');
+
+            $('#'+data[i].id).append(`          <a id="moviedes${data[i].id}" href="/movie_desc?id=${data[i].id}">
+                                                <div class="ui card">
+                                                        <div class="ui image mono">
+                                                            <img src="${ data[i].poster }"/>
+                                                        </div>
+                                                        <div class="ui content">
+                                                            <div class="ui header name_en">${ data[i].name_en }</div>
+                                                            <div class="ui meta name_th"><a>${ data[i].name_th}</a></div>
+                                                            <div class="ui description release_date"><span>${ data[i].release_date}</span></div>
+                                                        </div>
+
+                                                            <form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
+                                                            	<input type="hidden" id="movie${data[i].id}" th:field="*{selected_movie}"/>
+                                                            	<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
+                                                            </form>
+                                                </div></a>`);
+            movie_test_list.push(data[i].id);
+            document.getElementById("movie"+data[i].id).value = movie_test_list;
+            document.getElementById('selected_cinema').value = cinema_test_list;
+            console.log(document.getElementById("movie"+data[i].id).value);
+            console.log(document.getElementById('selected_cinema').value);
+        });
+        });
+
     });
 });
 </script>
+<style>
+    .ui.image.mono img, .ui.image svg {
+    display: block;
+    width: 100%;
+    height: 365px;
+    border-radius: inherit;
+}
+.ui.four.cards>.card {
+    width: calc(25% - 1.5em);
+    margin-left: .75em;
+    margin-right: .75em;
+}
+.ui.four.cards {
+    margin-left: -.75em;
+    margin-right: -.75em;
+}
+.ui.card {
+    margin: 1em;
+}
+
+</style>
 </body>
 </html>

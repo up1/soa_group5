@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
     var tokenID = localStorage.getItem("tokenID");
+    console.log(tokenID);
     if (tokenID !== null) {
         $.ajax({
             "url": "http://localhost:9004/validate/" + tokenID
