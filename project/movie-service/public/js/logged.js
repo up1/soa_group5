@@ -29,7 +29,7 @@ $(document).ready(function(){
             "data": {"tokenID":localStorage.getItem("tokenID")}
         }).then(function (status, jqxhr) {
             localStorage.removeItem("tokenID");
-            window.location.href = window.location.pathname;
+            window.location.href = '/';
         });
     });
 });
