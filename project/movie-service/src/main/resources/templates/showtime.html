@@ -24,6 +24,9 @@
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"/> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
 
     <title> ShowtimeTH </title>
 </head>
@@ -36,8 +39,13 @@
     <div th:replace="navbar :: navbar"></div>
     <!--Header pic-->
     <div class="ui centered grid" style="padding-bottom: 20px; ">
-        <img src="test1.jpeg"/></div>
-
+        <div class="fotorama" data-autoplay="true" data-loop="true">
+            <img src="http://www.majorcineplex.com/uploads/slidebanner/440/slidebanner_bg_440.jpg"/>
+            <img src="http://www.majorcineplex.com/uploads/slidebanner/437/slidebanner_bg_437.jpg"/>
+            <img src="https://tpc.googlesyndication.com/simgad/8319089228868361443"/>
+            <img src="https://tpc.googlesyndication.com/simgad/1000207776850273758"/>
+        </div>
+    </div>
     <script type="text/javascript">
                     var movie_test_list = [];
                     var cinema_test_list = [];

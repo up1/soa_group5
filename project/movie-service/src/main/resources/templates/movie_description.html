@@ -10,10 +10,11 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
 	<script src="js/MovieDetail.js"></script>
 	<script src="js/logged.js"></script>
+	<script src="js/search.js"></script>
 	<!--<script src="js/favorite.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -22,7 +23,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/custom.css"/>
 
-	<title>Test</title>
+	<title>ShowtimeTH</title>
 </head>
 
 <body>
@@ -63,14 +64,14 @@
 						<form action="#" th:action="@{/show}" th:object="${check}" method="post" style="display:inline-block;">
 							<input type="hidden" id="selected_movie" th:field="*{selected_movie}"/>
 							<input type="hidden" id="selected_cinema" th:field="*{selected_cinema}"/>
-							<button id="check_showtime_button" type="submit" onclick="go_to_showtime()" class="waves-effect waves-light btn red">Check Showtimes</button>
+							<button id="check_showtime_button" type="submit" onclick="go_to_showtime()" class="ui button">Check Showtimes</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="ui centered">
+	<div class="ui grid centered">
 		<iframe width="639" height="360" id="trailer" frameborder="0" allowfullscreen=""></iframe>
 	</div>
 </div>
