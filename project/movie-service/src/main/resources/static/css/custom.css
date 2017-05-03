@@ -1,0 +1,25 @@
+h1, h2, h3, h4, h5, span {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+button.ui.button {
+	background: red;
+	color: white;
+}
+
+#movie-dropdown ,
+#major-bkk-dropdown, #major-center-dropdown, #major-eas-dropdown, #major-nor-dropdown, #major-esn-dropdown, #major-sou-dropdown, #major-wes-dropdown,
+#sf-bkk-dropdown, #sf-center-dropdown, #sf-eas-dropdown, #sf-nor-dropdown, #sf-esn-dropdown, #sf-sou-dropdown, #sf-wes-dropdown{
+    padding: 20px;
+}
+
+.card {
+    padding: 5px !important;
+}
+
+
+
+.selected {
+    background: black !important;
+    color: white;
+}

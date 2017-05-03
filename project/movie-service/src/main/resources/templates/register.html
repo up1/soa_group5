@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <meta charset="UTF-8"/>
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script src="js/user.js"></script>
-    <script src="js/logged.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+
+    <script src="../static/js/search.js" th:src="@{js/search.js}"></script>
+    <script src="../static/js/logged.js" th:src="@{js/logged.js}"></script>
+    <script src="../static/js/user.js" th:src="@{js/user.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css" th:href="@{css/custom.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{semantic/dist/semantic.min.css}"/>
+
+
+    <script src="../static/semantic/dist/semantic.min.js" th:src="@{semantic/dist/semantic.min.js}"></script>
 </head>
 <body>
 <!-- NavBar-->

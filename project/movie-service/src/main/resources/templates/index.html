@@ -3,27 +3,21 @@
 <head>
 
     <meta charset="UTF-8"/>
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css"/>
-
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
-
-    <script src="js/movieAjax.js"></script>
-    <script src="js/cinemaAjax.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/logged.js"></script>
-    <!--<link rel="stylesheet" type="text/css" href="css/custom.css"/>-->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
-
-
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+
+    <script src="../static/js/movieAjax.js" th:src="@{js/movieAjax.js}"></script>
+    <script src="../static/js/cinemaAjax.js" th:src="@{js/cinemaAjax.js}"></script>
+    <script src="../static/js/search.js" th:src="@{js/search.js}"></script>
+    <script src="../static/js/logged.js" th:src="@{js/logged.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css" th:href="@{css/custom.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{semantic/dist/semantic.min.css}"/>
+
+    <script src="../static/semantic/dist/semantic.min.js" th:src="@{semantic/dist/semantic.min.js}"></script>
 
     <!-- fotorama.css & fotorama.js. -->
     <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"/> <!-- 3 KB -->
@@ -44,6 +38,7 @@
         <img src="http://www.majorcineplex.com/uploads/slidebanner/440/slidebanner_bg_440.jpg"/>
         <img src="http://www.majorcineplex.com/uploads/slidebanner/437/slidebanner_bg_437.jpg"/>
         <img src="http://www.majorcineplex.com/promotion/citibank-999-point-get-1-seat"/>
+        <img src="http://www.majorcineplex.com/news/smart-ticket-scan-and-go"/>
         <img src="https://tpc.googlesyndication.com/simgad/1000207776850273758"/>
     </div>
 </div>
