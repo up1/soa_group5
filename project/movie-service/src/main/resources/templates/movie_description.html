@@ -118,7 +118,7 @@
                     function like_movie(){
                     movie_test_list.push(document.getElementById('movie_id').innerHTML);
                     document.getElementById('selected_movie').value = movie_test_list;
-					$.ajax({ "url": "http://localhost:9004/like?movie_id=" + movie_test_list,
+					$.ajax({ "url": "http://128.199.122.153:9004/like?movie_id=" + movie_test_list,
 							"type": "POST"})
 					.then(function (data, status, jqxhr) {});
                     }
@@ -126,7 +126,7 @@
                     function unlike_movie(){
                     movie_test_list.push(document.getElementById('movie_id').innerHTML);
                     document.getElementById('selected_movie').value = movie_test_list;
-					$.ajax({ "url": "http://localhost:9004/unlike?movie_id=" + movie_test_list,
+					$.ajax({ "url": "http://128.199.122.153:9004/unlike?movie_id=" + movie_test_list,
 							"type": "DELETE"})
 					.then(function (data, status, jqxhr) {});
                     }

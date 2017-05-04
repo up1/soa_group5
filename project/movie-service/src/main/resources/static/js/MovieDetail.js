@@ -2,7 +2,7 @@ $(document).ready(function() {
     var movie_id = document.getElementById('movie_id').innerHTML;
     console.log(movie_id);
     $.ajax({
-        url: "http://localhost:9001/movie?id=" + movie_id
+        url: "http://139.59.237.128:9001/movie?id=" + movie_id
     }).then(function(movie, status, jqxhr) {
        $('#name_th').append(movie.name_th);
        $('#name_en').append(movie.name_en);

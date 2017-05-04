@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $.ajax({
-            url: 'http://139.59.227.188:9005/search'
+            url: 'http://128.199.122.153:9005/search'
         }).then(function(movie, status, jqxhr) {
 
            var search = movie.movies;

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.ajax({
 
-                     url: "http://139.59.227.188:9002/cinemas/major/bkk"
+                     url: "http:/128.199.122.153:9002/cinemas/major/bkk"
 
                  }).then(function(data, status, jqxhr) {
                      $('#major-bkk').append(`<div class="ui five column grid" id="major-bkk-dropdown"></div>`);
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-                          url: "http://139.59.227.188:9002/cinemas/major/cen"
+                          url: "http://128.199.122.153:9002/cinemas/major/cen"
 
                       }).then(function(data, status, jqxhr) {
                           $('#major-cen').append(`<div class="ui five column grid" id="major-center-dropdown"></div>`);
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-                                   url: "http://139.59.227.188:9002/cinemas/major/east"
+                                   url: "http://128.199.122.153:9002/cinemas/major/east"
 
                                }).then(function(data, status, jqxhr) {
                                    $('#major-eas').append(`<div class="ui five column grid" id="major-eas-dropdown"></div>`);
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
      $.ajax({
 
-                                        url: "http://139.59.227.188:9002/cinemas/major/north"
+                                        url: "http://128.199.122.153:9002/cinemas/major/north"
 
                                     }).then(function(data, status, jqxhr) {
                                         $('#major-nor').append(`<div class="ui five column grid" id="major-nor-dropdown"></div>`);
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-                                            url: "http://139.59.227.188:9002/cinemas/major/northeast"
+                                            url: "http://128.199.122.153:9002/cinemas/major/northeast"
 
                                         }).then(function(data, status, jqxhr) {
                                             $('#major-esn').append(`<div class="ui five column grid" id="major-esn-dropdown"></div>`);
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-                                                url: "http://139.59.227.188:9002/cinemas/major/south"
+                                                url: "http://128.199.122.153:9002/cinemas/major/south"
 
                                             }).then(function(data, status, jqxhr) {
                                                 $('#major-sou').append(`<div class="ui five column grid" id="major-sou-dropdown"></div>`);
@@ -84,7 +84,7 @@ $(document).ready(function() {
                                             });
     $.ajax({
 
-                                                    url: "http://139.59.227.188:9002/cinemas/major/west"
+                                                    url: "http://128.199.122.153:9002/cinemas/major/west"
 
                                                 }).then(function(data, status, jqxhr) {
                                                     $('#major-wes').append(`<div class="ui five column grid" id="major-wes-dropdown"></div>`);
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-                         url: "http://139.59.227.188:9002/cinemas/sf/bkk"
+                         url: "http://128.199.122.153:9002/cinemas/sf/bkk"
 
                      }).then(function(data, status, jqxhr) {
                          $('#sf-bkk').append(`<div class="ui five column grid" id="sf-bkk-dropdown"></div>`);
@@ -113,7 +113,7 @@ $(document).ready(function() {
 
         $.ajax({
 
-                              url: "http://139.59.227.188:9002/cinemas/sf/cen"
+                              url: "http://128.199.122.153:9002/cinemas/sf/cen"
 
                           }).then(function(data, status, jqxhr) {
                               $('#sf-cen').append(`<div class="ui five column grid" id="sf-center-dropdown"></div>`);
@@ -127,7 +127,7 @@ $(document).ready(function() {
 
         $.ajax({
 
-                                       url: "http://139.59.227.188:9002/cinemas/sf/east"
+                                       url: "http://128.199.122.153:9002/cinemas/sf/east"
 
                                    }).then(function(data, status, jqxhr) {
                                        $('#sf-eas').append(`<div class="ui five column grid" id="sf-eas-dropdown"></div>`);
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
          $.ajax({
 
-                                            url: "http://139.59.227.188:9002/cinemas/sf/north"
+                                            url: "http://128.199.122.153:9002/cinemas/sf/north"
 
                                         }).then(function(data, status, jqxhr) {
                                             $('#sf-nor').append(`<div class="ui five column grid" id="sf-nor-dropdown"></div>`);
@@ -155,7 +155,7 @@ $(document).ready(function() {
 
         $.ajax({
 
-                                                url: "http://139.59.227.188:9002/cinemas/sf/northeast"
+                                                url: "http://128.199.122.153:9002/cinemas/sf/northeast"
 
                                             }).then(function(data, status, jqxhr) {
                                                 $('#sf-esn').append(`<div class="ui five column grid" id="sf-esn-dropdown"></div>`);
@@ -169,7 +169,7 @@ $(document).ready(function() {
 
         $.ajax({
 
-                                                    url: "http://139.59.227.188:9002/cinemas/sf/south"
+                                                    url: "http://128.199.122.153:9002/cinemas/sf/south"
 
                                                 }).then(function(data, status, jqxhr) {
                                                     $('#sf-sou').append(`<div class="ui five column grid" id="sf-sou-dropdown"></div>`);
@@ -182,7 +182,7 @@ $(document).ready(function() {
                                                 });
         $.ajax({
 
-                                                        url: "http://139.59.227.188:9002/cinemas/sf/west"
+                                                        url: "http://128.199.122.153:9002/cinemas/sf/west"
 
                                                     }).then(function(data, status, jqxhr) {
                                                         $('#sf-wes').append(`<div class="ui five column grid" id="sf-wes-dropdown"></div>`);

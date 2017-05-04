@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class MovieAdapter {
     public Movie getMovieById(long movieId) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://movie-service:9001/movie?movie_id=" + movieId;
+        String url = "http://139.59.237.128:9001/movie?movie_id=" + movieId;
         return restTemplate.getForObject(url, Movie.class);
     }
 }

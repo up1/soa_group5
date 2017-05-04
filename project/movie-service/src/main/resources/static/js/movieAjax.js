@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-        url: "http://localhost:9001/movies"
+        url: "http://139.59.237.128:9001/movies"
 
     }).then(function(data, status, jqxhr) {
         $.each(data, function(i){

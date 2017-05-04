@@ -11,7 +11,7 @@ public class UserAdapter {
 
     public User getUserDetail(String userName) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:9004/user/" + userName;
+        String url = "http://128.199.122.153:9004/user/" + userName;
         User user = restTemplate.getForObject(url, User.class);
         return  user;
     }

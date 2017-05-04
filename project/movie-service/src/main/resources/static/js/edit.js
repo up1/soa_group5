@@ -3,7 +3,7 @@ $(document).ready(function() {
         console.log(tokenID);
         if (tokenID !== null) {
             $.ajax({
-                "url": "http://139.59.227.188:9004/validate/" + tokenID
+                "url": "http://128.199.122.153:9004/validate/" + tokenID
             }).then(function (data) {
                 if (data !== null && data.username !== undefined) {
                     //noinspection JSAnnotator
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
          $.ajax({
                      "type" : "PUT",
-                     "url" : "http://139.59.227.188:9004/edit?username=" +
+                     "url" : "http://128.199.122.153:9004/edit?username=" +
                              $("#username").val() + "&firstname=" +
                              $("#firstname").val() + "&lastname=" +
                              $("#lastname").val() + "&gender=" +

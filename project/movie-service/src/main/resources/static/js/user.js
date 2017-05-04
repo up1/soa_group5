@@ -5,7 +5,7 @@ $(document).ready(function() {
     $(".ui.negative.message").hide();
     $("#login-button").click(function() {
         $.ajax({
-            "url" : "http://139.59.227.188:9004/login?username=" +
+            "url" : "http://128.199.122.153:9004/login?username=" +
                 $("#input-username").val() +
                 "&password=" +
                 $("#input-password").val()
@@ -29,7 +29,7 @@ $(document).ready(function() {
         } else {
             $.ajax({
                         "type" : "POST",
-                        "url" : "http://139.59.227.188:9004/register?username=" +
+                        "url" : "http://128.199.122.153:9004/register?username=" +
                                 $("#username").val() + "&password=" +
                                 $("#password").val() + "&firstname=" +
                                 $("#firstname").val() + "&lastname=" +
