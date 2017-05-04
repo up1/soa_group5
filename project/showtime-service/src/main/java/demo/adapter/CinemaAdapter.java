@@ -12,7 +12,7 @@ public class CinemaAdapter {
 
     public Cinema getCinemaDetail(long cinemaId) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://128.199.122.153:9002/cinema?id=" + cinemaId;
+        String url = "http://cinema-service:9002/cinema?id=" + cinemaId;
         Cinema cinema = restTemplate.getForObject(url, Cinema.class);
         return  cinema;
     }
