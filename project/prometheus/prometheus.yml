@@ -31,25 +31,39 @@ scrape_configs:
     scrape_interval: 5s
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['localhost:9001']
+      - targets: ['139.59.237.128:9001']
 
   # cinema service
   - job_name: 'cinema-service'
     scrape_interval: 5s
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['localhost:9002']
+      - targets: ['128.199.122.153:9002']
 
   # showtime service
   - job_name: 'showtime-service'
     scrape_interval: 5s
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['localhost:9003']
+      - targets: ['139.59.118.120:9003']
 
   # user service
   - job_name: 'user-service'
     scrape_interval: 5s
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['localhost:9004']
+      - targets: ['128.199.122.153:9004']
+
+  # search service
+  - job_name: 'search-service'
+    scrape_interval: 5s
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['128.199.122.153:9005']
+
+  # noti service
+  - job_name: 'noti-service'
+    scrape_interval: 5s
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['139.59.118.120:9006']
