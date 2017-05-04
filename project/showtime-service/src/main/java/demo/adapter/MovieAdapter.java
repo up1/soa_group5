@@ -12,7 +12,7 @@ public class MovieAdapter {
 
     public Movie getMovieDetail(long movieId) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://movie-service:9001/movie?id=" + movieId;
+        String url = "http://139.59.237.128:9001/movie?id=" + movieId;
         Movie movie = restTemplate.getForObject(url, Movie.class);
         return  movie;
     }

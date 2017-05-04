@@ -11,16 +11,16 @@ $(document).ready(function() {
     console.log(cinema_id);
 
     if(cinema_id == '[]' && movie_id != '[]') {
-        link = "http://139.59.237.128:9003/showfrommovie?movie=" + movie_id;
+        link = "http://139.59.118.120:9003/showfrommovie?movie=" + movie_id;
 
     } else {
         if(cinema_id != '[]' && movie_id == '[]') {
-            link =  "http://139.59.237.128:9003/showfromcinema?cinema=" + cinema_id;
+            link =  "http://139.59.118.120:9003/showfromcinema?cinema=" + cinema_id;
 
 
         } else {
             if(cinema_id != '[]' && movie_id != '[]') {
-                link = "http://139.59.237.128:9003/showfromall?movie=" + movie_id + "&cinema=" + cinema_id;
+                link = "http://139.59.118.120:9003/showfromall?movie=" + movie_id + "&cinema=" + cinema_id;
 
             }
         }
