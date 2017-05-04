@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.ajax({
 
-                     url: "http:/128.199.122.153:9002/cinemas/major/bkk"
+                     url: "http://128.199.122.153:9002/cinemas/major/bkk"
 
                  }).then(function(data, status, jqxhr) {
                      $('#major-bkk').append(`<div class="ui five column grid" id="major-bkk-dropdown"></div>`);
