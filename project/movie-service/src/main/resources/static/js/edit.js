@@ -2,12 +2,12 @@ $(document).ready(function() {
     var tokenID = localStorage.getItem("tokenID");
         if (tokenID !== null) {
             $.ajax({
-                "url": "http://localhost:9004/validate/" + tokenID
+                "url": "http://128.199.122.153:9004/validate/" + tokenID
             }).then(function (data) {
                 if (data !== null && data.username !== undefined) {
                     //noinspection JSAnnotator
                     $.ajax({
-                        "url": "http://localhost:9004/user/" + data.username
+                        "url": "http://128.199.122.153:9004/user/" + data.username
                     }).then(function(response) {
                         document.getElementById("username").value = response.username;
                         document.getElementById("firstname").value = response.firstname;
@@ -38,7 +38,7 @@ $(document).ready(function() {
         }
          $.ajax({
                      "type" : "PUT",
-                     "url" : "http://localhost:9004/edit?username=" +
+                     "url" : "http://128.199.122.153:9004/edit?username=" +
                              $("#username").val() + "&firstname=" +
                              $("#firstname").val() + "&lastname=" +
                              $("#lastname").val() + "&gender=" +
