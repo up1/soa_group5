@@ -13,6 +13,42 @@ Show all onshow movies.
 ```json
 [
 {
+"id": 15,
+"name_th": "โดราเอมอน โนบิตะ ผู้กล้าแห่งอวกาศ",
+"name_en": "Doraemon: Nobita's Space Heroes",
+"description": "การกลับมาผจญภัยอีกครั้งของโนบิตะกับโดราเอม่อนและผองเพื่อน ซึ่งมาในปีนี้ ใช้ชื่อตอนว่า Doraemon: Nobita's Space Heroes  เป็นเรื่องราวของการผจญภัยในอวกาศและพวกโนบิตะต้องสู้กับสัตว์ประหลาดจากต่างดาวเพื่อปกป้องดาวดวงหนึ่งของเพื่อนที่ชื่อว่าอารอน โดยแต่ละคนจะมีพลังวิเศษแตกต่างกัน นอกจากนี้แต่ละคนยังมีเข็มกลัดดาวสำหรับแปลงร่าง คล้ายกับขบวนการห้าสีเลย",
+"release_date": "2017-05-04",
+"poster": "http://www.majorcineplex.com/uploads/movie/1301/thumb_1301.jpg",
+"trailer": "https://www.youtube.com/embed/xvC3vJAOxU8",
+"duration": 100,
+"status": "onshow",
+"cover": "http://www.majorcineplex.com/uploads/movie/1301/cover_1301.jpg"
+},
+{
+"id": 16,
+"name_th": "The Osiris Child: Science Fiction Vol 1",
+"name_en": "The Osiris Child: Science Fiction Vol 1",
+"description": "ในโลกอนาคต บริษัท EXOr ได้พัฒนาสิ่งมีชีวิตสายพันธุ์ใหม่เพื่อเป็นอาวุธชีวภาพในการล่าอาณานิคมดวงดาว แต่เมื่อมันหลุดรอดไปได้ ความหวังจึงตกอยู่ที่ เคน ซอมเมอร์วิลล์ (แดเนียล แม็คเฟอร์สัน) นายทหารที่ทำงานให้แก่บริษัท EXOr และไซ ลอมบร็อก (เคลแลน ลุตซ์) อดีตนักโทษในการปกป้องโลกและช่วยเหลือลูกสาวของเคนให้ได้",
+"release_date": "2017-05-04",
+"poster": "http://www.majorcineplex.com/uploads/movie/1937/thumb_1937.jpg",
+"trailer": "https://www.youtube.com/embed/kVB7dmbG2VY",
+"duration": 99,
+"status": "onshow",
+"cover": "http://www.majorcineplex.com/uploads/movie/1937/cover_1937.jpg"
+},
+{
+"id": 10,
+"name_th": "ฉลาดเกมส์โกง",
+"name_en": "ฉลาดเกมส์โกง",
+"description": "\"ฉลาดเกมส์โกง\" เรื่องราวของเด็กฉลาด กับภารกิจโกงข้อสอบ เปลี่ยนกระดาษคำตอบให้เป็นเงินล้าน ขอต้อนรับทุกคนเข้าสู่ \"ธุรกิจกลางสนามสอบ\" ของ ลิน (ออกแบบ-ชุติมณฑน์ จึงเจริญสุขยิ่ง) นักเรียนทุนเจ้าของเกรดเฉลี่ย 4.00 ทุกปีการศึกษา ธุรกิจที่มีจุดเริ่มต้นจากการช่วยเพื่อนสนิทอย่าง เกรซ (อุ้ม อิษยา ฮอสุวรรณ) เด็กกิจกรรมตัวยงแต่ผลการเรียนย่ำแย่ และ พัฒน์ (เจมส์ ธีรดนย์ ศุภพันธุ์ภิญโญ) เด็กบ้านรวยที่คิดว่าเงินซื้อได้ทุกอย่าง ด้วยการแชร์คำตอบกลางห้องสอบ จนกลายเป็นวงการลอกขนาดใหญ่ ที่นักเรียนหลายคนในโรงเรียนยินดีจ่ายค่าตอบแทนแบบสูงลิบ แลกกับการได้รับคำตอบจากอัจฉริยะอย่างลิน",
+"release_date": "2017-05-03",
+"poster": "https://www.majorcineplex.com/uploads/movie/1930/thumb_1930.jpg",
+"trailer": "https://www.youtube.com/embed/JcUf9ANCpNY",
+"duration": 130,
+"status": "onshow",
+"cover": "https://www.majorcineplex.com/uploads/movie/1930/cover_1930.jpg"
+},
+{
 "id": 1,
 "name_th": "รวมพันธุ์นักสู้พิทักษ์จักรวาล 2",
 "name_en": "Guardians Galaxy 2",
@@ -23,6 +59,18 @@ Show all onshow movies.
 "duration": 135,
 "status": "onshow",
 "cover": "https://www.majorcineplex.com/uploads/movie/1737/cover_1737.jpg"
+},
+{
+"id": 17,
+"name_th": "บาฮูบาลี 2",
+"name_en": "Bahubali 2",
+"description": "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers. His story is juxtaposed with past events that unfolded in the Mahishmati Kingdom",
+"release_date": "2017-04-28",
+"poster": "http://www.majorcineplex.com/uploads/movie/1948/thumb_1948.jpg",
+"trailer": "https://www.youtube.com/embed/G62HrubdD6o",
+"duration": 170,
+"status": "onshow",
+"cover": "http://www.majorcineplex.com/uploads/movie/1948/cover_1948.jpg"
 },
 {
 "id": 3,
@@ -37,66 +85,6 @@ Show all onshow movies.
 "cover": "https://www.majorcineplex.com/uploads/movie/1633/cover_1633.jpg"
 },
 {
-"id": 4,
-"name_th": "คนระห่ำพันธุ์เกมเมอร์",
-"name_en": "Fabricated City",
-"description": "ควอนยู (จิชางวุค) เป็นหนุ่มตกงานในชีวิตจริง แต่ในโลกออนไลน์ เขาเป็นเกมเมอร์ที่เก่งที่สุดคนหนึ่ง แต่เมื่อเขากลายเป็นผู้ต้องสงสัยในคดีฆาตกรรม ควอนยู ก็ต้องอาศัยสกิลในการเล่นเกมมาหนีการตามล่าของตำรวจ และตามล่าหาตัวการที่แท้จริงในชีวิตจริง",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1893/thumb_1893.jpg",
-"trailer": "https://www.youtube.com/embed/k-LM0TQOmAc",
-"duration": 126,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1893/cover_1893.jpg"
-},
-{
-"id": 5,
-"name_th": "รวมพล 5 มาสค์ไรเดอร์ ปะทะ ดร. แพ็คแมน",
-"name_en": "Kamen Rider 2017",
-"description": "รวมพล 5 มาสค์ไรเดอร์ ปะทะ ดร.แพ็คแมน พูดถึงการรุกรานของ แพ็คแมน ไวรัสเกมลึกลับที่มีชีวิต ได้นำมาซึ่งอันตรายต่อมวลมนุษย์อย่างที่ไม่เคยมีมาก่อน โดยในขณะที่ไวรัสสุดอันตรายกำลังระบาด เท็นคูจิ ทาเครุ หรือ มาสค์ไรเดอร์โกสต์ เกิดติดไวรัสนี้เข้า ทำให้เขาไม่สามารถแปลงร่างได้ โฮโจ เอมุ หรือ มาสค์ไรเดอร์เอ็กเซด จึงพยายามสืบหาศัตรูที่เป็นต้นตอของการระบาด แต่กลับพบว่าตัวเขาเองมีส่วนเกี่ยวข้องกับ “ความจริงอันยิ่งใหญ่” ที่โถมกระหน่ำเข้ามาควบคุมชะตากรรม จนเกิดการรวมตัวของเหล่าตำนานมาสค์ไรเดอร์ทั้ง 5 แห่งยุคราวกับปาฏิหาริย์ จะมีวิธีการใดเพื่อกอบกู้สถานการณ์เลวร้ายนี้ มาสค์ไรเดอร์วิซาร์ด ที่หยุดพักและออกเดินทาง มาสค์ไรเดอร์ไกมุ ที่หายตัวไปจากพื้นพิภพ มาสค์ไรเดอร์ไดรฟ ที่สูญเสียคุณเบลท์ไป (เข็มขัดประตัวใช้สำหรับแปลงร่าง) และความลับของ มาสค์ไรเดอร์เอ็กเซด ที่รอการเปิดเผย",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1928/thumb_1928.jpg",
-"trailer": "https://www.youtube.com/embed/IyPYBlC0XnM",
-"duration": 89,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1928/cover_1928.jpg"
-},
-{
-"id": 6,
-"name_th": "ยูกิโอ เกมกลคนอัจฉริยะ ศึกปริศนาด้านมืด",
-"name_en": "Yu-Gi-Oh",
-"description": "ยูกิโอ เกมกลคนอัจฉริยะ ศึกปริศนาด้านมืด ภาพยนตร์อนิเมชั่นที่ทำเพื่อฉลองครบรอบ 20 ปีกับการถือกำเนิดของ Yu-Gi-Oh! หรือ \"เกมกลคนอัจฉริยะ\" และถือเป็นครั้งแรกที่แฟนๆชาวไทยจะได้ดูในโรงภาพยนตร์ สำหรับภาคนี้ทางอาจารย์ คาซูกิ ทาคาฮาชิ ก็ได้หยิบเอาเรื่องราวการต่อสู้ \"ดูเอล\" ระหว่าง ยูกิด้านมืด และ เซโตะ ไคบะ ที่แฟนๆโหวตว่าเป็นการดวลที่สนุกที่สุด ",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1931/thumb_1931.jpg",
-"trailer": "https://www.youtube.com/embed/FcSTYf1L0jY",
-"duration": 130,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1931/cover_1931.jpg"
-},
-{
-"id": 7,
-"name_th": "จับปีศาจมาเรียกค่าไถ่",
-"name_en": "Form a House on Willow Street",
-"description": "From A House On Willow Street คือหนังสยองขวัญแนวใหม่ที่มีการผสมผสานระหว่างหนังจารกรรมบุกบ้านเข้าไปด้วย ได้ มารับบท เฮเซล สาวห้าวหัวหน้าแก๊งลักพาตัวพร้อมกับสมุนอีกสามคนวางแผนเรียกค่าไถ่ แคทเธอรีน สาวน้อย ลูกสาวคนสวยของสามีภรรยาเศรษฐีแต่มันกลายเป็นฝันร้ายของทั้ง 3 เมื่อ แคทเธอรีน ไม่ได้ไร้เดียงสาอย่างที่พวกเขาคิด เธอกลายมาเป็นตัวอันตรายที่จะปลดปล่อยปีศาจร้ายที่สยองเกินจินตนาการออกมา แก๊งที่ลักพาตัวเธอมาตกเป็นฝ่ายที๋โดนตามล่าเสียเอง พวกเขาไม่รู้เลยว่ากำลังเล่นกับอะไรอยู่",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1787/thumb_1787.jpg",
-"trailer": "https://www.youtube.com/embed/i7NHFKbguYI",
-"duration": 90,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1787/cover_1787.jpg"
-},
-{
-"id": 11,
-"name_th": "รักในวันรบ",
-"name_en": "Bitter Harvest",
-"description": "สร้างจากหนึ่งในโศกนาฏกรรมที่หลายคนมองข้ามแห่งศตวรรษที่ 20 Bitter Harvest คือเรื่องราวความรัก เกียรติยศ การกบฏและการเอาตัวรอดอันทรงพลังผ่านสายตาของคู่รักวัยรุ่นท่ามกลางนโยบายการกวาดล้างเผ่าพันธุ์ยูเครนของโจเซฟ สตาลินในปี 1930 ขณะที่สตาลินพัฒนานโยบายคอมมิวนิสต์ในเครมลิน ศิลปินหนุ่มนามว่ายูริ (แม็กซ์ ไอรอนส์) ต้องต่อสู้เพื่อเอาตัวรอดพ้นจากความอดอยาก การถูกจองจำ การทนทุกข์ทรมานในการช่วยเหลือคนรักในวัยเด็ก นาทัลกา (ซาแมนธา บาร์คส์) ให้รอดพ้นจาก Holomodor การเสียชีวิตจากภาวะหิวโหยที่ฆ่าคนยูเครนไปกว่าล้านคน ท่ามกลางโศกนาฏกรรมอันเป็นฉากหลัง ยูริหลบหนีจากคุกโซเวียตและเข้าร่วมกองกำลังต่อต้านบอลเชวิก ขณะเข้าร่วมรบเขาก็เขาก็กลับมาหานาทัลกาและดำเนินการต่อสู้เพื่อปลดปล่อยยูเครน",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1908/thumb_1908.jpg",
-"trailer": "https://www.youtube.com/embed/HKLBp3fZ5zA",
-"duration": 103,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1908/cover_1908.jpg"
-},
-{
 "id": 8,
 "name_th": "เร็ว..แรงทะลุนรก 8",
 "name_en": "Fast And Furious 8",
@@ -107,18 +95,6 @@ Show all onshow movies.
 "duration": 136,
 "status": "onshow",
 "cover": "https://www.majorcineplex.com/uploads/movie/1736/cover_1736.jpg"
-},
-{
-"id": 9,
-"name_th": "สเมิร์ฟ หมู่บ้านที่สาบสูญ",
-"name_en": "The Smurfs 3",
-"description": "การกลับมาของเหล่าภูตตัวสีฟ้าที่จะมาป่วน ซึ่งคราวนี้เหล่าสเมิร์ฟจะต้องออกเดินทางเพื่อเข้าไปในหมู่บ้านที่สาบสูญ ก่อนที่พ่อมดช่วยร้ายจะค้นหาเจอ ท่ามกลางการผจญภัยสุดสนุกสนาน พร้อมตัวละครที่คุณคิดถึงจากภาค 1 กลับมาแบบครบเซ็ต ทั้ง ปาป้า สเมิร์ฟ ,สเมิร์ฟเฟ็ตต์,แฮฟฟี่ , คลัมซี่  และ เบรนนี่",
-"release_date": "2017-04-06",
-"poster": "https://www.majorcineplex.com/uploads/movie/1804/thumb_1804.jpg",
-"trailer": "https://www.youtube.com/embed/0SDU6LlgdAw",
-"duration": 89,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1804/cover_1804.jpg"
 }
 ]
 ```

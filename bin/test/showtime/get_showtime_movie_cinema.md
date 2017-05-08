@@ -1,9 +1,9 @@
 # Get Showtime of specific movie and cinema
 
 
-## `GET showfromall?movie=3&cinema=1`
+## `GET showfromall?movie=8&cinema=48`
 
-get showtime of movie id = 3 and cinema id = 1.
+get showtime of movie id = 8 and cinema id = 48.
 
 ===
 
@@ -12,65 +12,127 @@ get showtime of movie id = 3 and cinema id = 1.
 ```json
 [
 {
-"showtime_id": 521,
-"movie_id": 3,
-"cinema_id": 1,
-"show_language": "E",
-"show_time": "13:00:00",
-"show_date": "2017-05-02",
-"show_movie_link": "https://booking.sfcinemacity.com/visSelectTickets.aspx?cinemacode=9909&txtSessionId=46895&visLang=2",
-"show_theatre": 4,
+"showtime_id": 560,
+"movie_id": 8,
+"cinema_id": 48,
+"show_language": "EN/TH",
+"show_time": "12:00:00",
+"show_date": "2017-05-08",
+"show_movie_link": "http://www.majorcineplex.com/booking/select-tickets.php?sessionId=126122",
+"show_theatre": 11,
 "show_system_type": "Digital 2D",
 "movie": {
-"id": 3,
-"name_th": "กระท่อมเหนือปาฏิหาริย์",
-"name_en": "The Shack",
-"description": "A grieving man receives a mysterious, personal invitation to meet with God at a place called \"The Shack.\"",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1633/thumb_1633.jpg",
-"trailer": "https://www.youtube.com/embed/CL0yUbSS5Eg",
-"duration": 132,
+"id": 8,
+"name_th": "เร็ว..แรงทะลุนรก 8",
+"name_en": "Fast And Furious 8",
+"description": "ดอมและเล็ตตี้อยู่ในช่วงฮันนีมูน ส่วนไบรอันและมีอาก็ตัดสินใจกลับไปใช้ชีวิตครอบครัวของตัวเอง ส่วนคนอื่น ๆ ก็พ้นจากข้อกล่าวหา กลับมาใช้ชีวิตอย่างปกติ แต่เมื่อมีสตรีลึกลับ (เจ้าของรางวัลออสการ์ ชาร์ลิซ เธอรอน) เข้ามาล่อลวงดอมสู่โลกอาชญากรรรม โดยที่เขาไม่มีทางเลือกและกลายเป็นคนทรยศครอบครัว พวกเขาต้องเผชิญกับการทดสอบอย่างที่ไม่เคยพบมาก่อน",
+"release_date": "2017-04-12",
+"poster": "https://www.majorcineplex.com/uploads/movie/1736/thumb_1736.jpg",
+"trailer": "https://www.youtube.com/embed/uisBaTkQAEs",
+"duration": 136,
 "status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1633/cover_1633.jpg"
+"cover": "https://www.majorcineplex.com/uploads/movie/1736/cover_1736.jpg"
 },
 "cinema": {
-"id": 1,
-"group": "SF",
-"cinema_name_th": "เอส เอฟ เซ็นทรัลเวิร์ล",
-"cinema_name_en": "SF Central World",
+"id": 48,
+"group": "Major",
+"cinema_name_th": "พารากอน ซีนีเพล็กซ์",
+"cinema_name_en": "Paragon Cineplex",
 "cinema_zone": "BKK",
-"cinema_tel": ""
+"cinema_tel": "0-2129-4635"
 }
 },
 {
-"showtime_id": 522,
-"movie_id": 3,
-"cinema_id": 1,
-"show_language": "E",
-"show_time": "16:10:00",
-"show_date": "2017-05-02",
-"show_movie_link": "https://booking.sfcinemacity.com/visSelectTickets.aspx?cinemacode=9909&txtSessionId=46896&visLang=2",
-"show_theatre": 4,
+"showtime_id": 561,
+"movie_id": 8,
+"cinema_id": 48,
+"show_language": "EN/TH",
+"show_time": "15:00:00",
+"show_date": "2017-05-08",
+"show_movie_link": "http://www.majorcineplex.com/booking/select-tickets.php?sessionId=126122",
+"show_theatre": 11,
 "show_system_type": "Digital 2D",
 "movie": {
-"id": 3,
-"name_th": "กระท่อมเหนือปาฏิหาริย์",
-"name_en": "The Shack",
-"description": "A grieving man receives a mysterious, personal invitation to meet with God at a place called \"The Shack.\"",
-"release_date": "2017-04-20",
-"poster": "https://www.majorcineplex.com/uploads/movie/1633/thumb_1633.jpg",
-"trailer": "https://www.youtube.com/embed/CL0yUbSS5Eg",
-"duration": 132,
+"id": 8,
+"name_th": "เร็ว..แรงทะลุนรก 8",
+"name_en": "Fast And Furious 8",
+"description": "ดอมและเล็ตตี้อยู่ในช่วงฮันนีมูน ส่วนไบรอันและมีอาก็ตัดสินใจกลับไปใช้ชีวิตครอบครัวของตัวเอง ส่วนคนอื่น ๆ ก็พ้นจากข้อกล่าวหา กลับมาใช้ชีวิตอย่างปกติ แต่เมื่อมีสตรีลึกลับ (เจ้าของรางวัลออสการ์ ชาร์ลิซ เธอรอน) เข้ามาล่อลวงดอมสู่โลกอาชญากรรรม โดยที่เขาไม่มีทางเลือกและกลายเป็นคนทรยศครอบครัว พวกเขาต้องเผชิญกับการทดสอบอย่างที่ไม่เคยพบมาก่อน",
+"release_date": "2017-04-12",
+"poster": "https://www.majorcineplex.com/uploads/movie/1736/thumb_1736.jpg",
+"trailer": "https://www.youtube.com/embed/uisBaTkQAEs",
+"duration": 136,
 "status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1633/cover_1633.jpg"
+"cover": "https://www.majorcineplex.com/uploads/movie/1736/cover_1736.jpg"
 },
 "cinema": {
-"id": 1,
-"group": "SF",
-"cinema_name_th": "เอส เอฟ เซ็นทรัลเวิร์ล",
-"cinema_name_en": "SF Central World",
+"id": 48,
+"group": "Major",
+"cinema_name_th": "พารากอน ซีนีเพล็กซ์",
+"cinema_name_en": "Paragon Cineplex",
 "cinema_zone": "BKK",
-"cinema_tel": ""
+"cinema_tel": "0-2129-4635"
+}
+},
+{
+"showtime_id": 562,
+"movie_id": 8,
+"cinema_id": 48,
+"show_language": "EN/TH",
+"show_time": "18:00:00",
+"show_date": "2017-05-08",
+"show_movie_link": "http://www.majorcineplex.com/booking/select-tickets.php?sessionId=126122",
+"show_theatre": 11,
+"show_system_type": "Digital 2D",
+"movie": {
+"id": 8,
+"name_th": "เร็ว..แรงทะลุนรก 8",
+"name_en": "Fast And Furious 8",
+"description": "ดอมและเล็ตตี้อยู่ในช่วงฮันนีมูน ส่วนไบรอันและมีอาก็ตัดสินใจกลับไปใช้ชีวิตครอบครัวของตัวเอง ส่วนคนอื่น ๆ ก็พ้นจากข้อกล่าวหา กลับมาใช้ชีวิตอย่างปกติ แต่เมื่อมีสตรีลึกลับ (เจ้าของรางวัลออสการ์ ชาร์ลิซ เธอรอน) เข้ามาล่อลวงดอมสู่โลกอาชญากรรรม โดยที่เขาไม่มีทางเลือกและกลายเป็นคนทรยศครอบครัว พวกเขาต้องเผชิญกับการทดสอบอย่างที่ไม่เคยพบมาก่อน",
+"release_date": "2017-04-12",
+"poster": "https://www.majorcineplex.com/uploads/movie/1736/thumb_1736.jpg",
+"trailer": "https://www.youtube.com/embed/uisBaTkQAEs",
+"duration": 136,
+"status": "onshow",
+"cover": "https://www.majorcineplex.com/uploads/movie/1736/cover_1736.jpg"
+},
+"cinema": {
+"id": 48,
+"group": "Major",
+"cinema_name_th": "พารากอน ซีนีเพล็กซ์",
+"cinema_name_en": "Paragon Cineplex",
+"cinema_zone": "BKK",
+"cinema_tel": "0-2129-4635"
+}
+},
+{
+"showtime_id": 563,
+"movie_id": 8,
+"cinema_id": 48,
+"show_language": "EN/TH",
+"show_time": "21:00:00",
+"show_date": "2017-05-08",
+"show_movie_link": "http://www.majorcineplex.com/booking/select-tickets.php?sessionId=126122",
+"show_theatre": 11,
+"show_system_type": "Digital 2D",
+"movie": {
+"id": 8,
+"name_th": "เร็ว..แรงทะลุนรก 8",
+"name_en": "Fast And Furious 8",
+"description": "ดอมและเล็ตตี้อยู่ในช่วงฮันนีมูน ส่วนไบรอันและมีอาก็ตัดสินใจกลับไปใช้ชีวิตครอบครัวของตัวเอง ส่วนคนอื่น ๆ ก็พ้นจากข้อกล่าวหา กลับมาใช้ชีวิตอย่างปกติ แต่เมื่อมีสตรีลึกลับ (เจ้าของรางวัลออสการ์ ชาร์ลิซ เธอรอน) เข้ามาล่อลวงดอมสู่โลกอาชญากรรรม โดยที่เขาไม่มีทางเลือกและกลายเป็นคนทรยศครอบครัว พวกเขาต้องเผชิญกับการทดสอบอย่างที่ไม่เคยพบมาก่อน",
+"release_date": "2017-04-12",
+"poster": "https://www.majorcineplex.com/uploads/movie/1736/thumb_1736.jpg",
+"trailer": "https://www.youtube.com/embed/uisBaTkQAEs",
+"duration": 136,
+"status": "onshow",
+"cover": "https://www.majorcineplex.com/uploads/movie/1736/cover_1736.jpg"
+},
+"cinema": {
+"id": 48,
+"group": "Major",
+"cinema_name_th": "พารากอน ซีนีเพล็กซ์",
+"cinema_name_en": "Paragon Cineplex",
+"cinema_zone": "BKK",
+"cinema_tel": "0-2129-4635"
 }
 }
 ]

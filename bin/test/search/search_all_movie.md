@@ -10,7 +10,7 @@ search all movie.
 * `Content-Type: "application/json;charset=UTF-8"`
 ```json
 {
-"movie_count": 17,
+"movie_count": 19,
 "movies": [
 {
 "id": 14,
@@ -21,9 +21,22 @@ search all movie.
 "poster": "http://www.majorcineplex.com/uploads/movie/1862/thumb_1862.jpg",
 "trailer": "https://www.youtube.com/embed/H0VW6sg50Pk",
 "duration": 121,
-"status": "coming_soon",
+"status": "comingsoon",
 "cover": "http://www.majorcineplex.com/uploads/movie/1862/cover_1862.jpg",
 "link": "/movie_desc?id=14"
+},
+{
+"id": 18,
+"name_th": "คิง อาร์เธอร์ ตำนานแห่งดาบราชันย์",
+"name_en": "King Arthur",
+"description": "King Arthur: Legend of the Sword  ภาพยนตร์แอ็คชั่นผจญภัยแฟนตาซีสุดอลังการแหวกแนวตำนานสุดคลาสสิคของดาบเอกซ์แคลิเบอร์ มีการติดตามชีวิตของอาร์เธอร์ตั้งแต่ชีวิตธรรมดาจนถึงการได้ขึ้นครองบัลลังก์ พ่อของอาร์เธอร์ถูกฆ่าตายตั้งแต่เด็ก วอร์ทิเกิร์น (จู๊ด ลอว์) ลุงของอาร์เธอร์ได้ฉวยโอกาสครองมงกุฎ ชิงสิทธิโดยชอบธรรมของเขาและเขาเองก็ไม่รู้ชะตาชีวิตที่แท้จริงของตนเอง อาร์เธอร์เติบโตด้วยความยากลำบากในตรอกเล็กๆ ของเมือง แต่เมื่อเขาดึงดาบขึ้นมาจากหินได้ ชีวิตเขาเกิดพลิกผันและทำให้พบกับชะตาชีวิตที่แท้จริงของตัวเอง.. แม้ว่าเขาจะยินดีหรือไม่ก็ตาม",
+"release_date": "2017-05-10",
+"poster": "http://www.majorcineplex.com/uploads/movie/1733/thumb_1733.jpg",
+"trailer": "https://www.youtube.com/embed/RhCKdRBCgtc",
+"duration": 126,
+"status": "comingsoon",
+"cover": "http://www.majorcineplex.com/uploads/movie/1733/cover_1733.jpg",
+"link": "/movie_desc?id=18"
 },
 {
 "id": 15,
@@ -34,7 +47,7 @@ search all movie.
 "poster": "http://www.majorcineplex.com/uploads/movie/1301/thumb_1301.jpg",
 "trailer": "https://www.youtube.com/embed/xvC3vJAOxU8",
 "duration": 100,
-"status": "coming_soon",
+"status": "onshow",
 "cover": "http://www.majorcineplex.com/uploads/movie/1301/cover_1301.jpg",
 "link": "/movie_desc?id=15"
 },
@@ -45,9 +58,9 @@ search all movie.
 "description": "ในโลกอนาคต บริษัท EXOr ได้พัฒนาสิ่งมีชีวิตสายพันธุ์ใหม่เพื่อเป็นอาวุธชีวภาพในการล่าอาณานิคมดวงดาว แต่เมื่อมันหลุดรอดไปได้ ความหวังจึงตกอยู่ที่ เคน ซอมเมอร์วิลล์ (แดเนียล แม็คเฟอร์สัน) นายทหารที่ทำงานให้แก่บริษัท EXOr และไซ ลอมบร็อก (เคลแลน ลุตซ์) อดีตนักโทษในการปกป้องโลกและช่วยเหลือลูกสาวของเคนให้ได้",
 "release_date": "2017-05-04",
 "poster": "http://www.majorcineplex.com/uploads/movie/1937/thumb_1937.jpg",
-"trailer": "https://www.youtube.com/watch?v=kVB7dmbG2VY",
-"duration": 0,
-"status": "coming_soon",
+"trailer": "https://www.youtube.com/embed/kVB7dmbG2VY",
+"duration": 99,
+"status": "onshow",
 "cover": "http://www.majorcineplex.com/uploads/movie/1937/cover_1937.jpg",
 "link": "/movie_desc?id=16"
 },
@@ -59,8 +72,8 @@ search all movie.
 "release_date": "2017-05-03",
 "poster": "https://www.majorcineplex.com/uploads/movie/1930/thumb_1930.jpg",
 "trailer": "https://www.youtube.com/embed/JcUf9ANCpNY",
-"duration": 0,
-"status": "coming_soon",
+"duration": 130,
+"status": "onshow",
 "cover": "https://www.majorcineplex.com/uploads/movie/1930/cover_1930.jpg",
 "link": "/movie_desc?id=10"
 },
@@ -76,6 +89,19 @@ search all movie.
 "status": "onshow",
 "cover": "https://www.majorcineplex.com/uploads/movie/1737/cover_1737.jpg",
 "link": "/movie_desc?id=1"
+},
+{
+"id": 17,
+"name_th": "บาฮูบาลี 2",
+"name_en": "Bahubali 2",
+"description": "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers. His story is juxtaposed with past events that unfolded in the Mahishmati Kingdom",
+"release_date": "2017-04-28",
+"poster": "http://www.majorcineplex.com/uploads/movie/1948/thumb_1948.jpg",
+"trailer": "https://www.youtube.com/embed/G62HrubdD6o",
+"duration": 170,
+"status": "onshow",
+"cover": "http://www.majorcineplex.com/uploads/movie/1948/cover_1948.jpg",
+"link": "/movie_desc?id=17"
 },
 {
 "id": 2,
@@ -112,7 +138,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1893/thumb_1893.jpg",
 "trailer": "https://www.youtube.com/embed/k-LM0TQOmAc",
 "duration": 126,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1893/cover_1893.jpg",
 "link": "/movie_desc?id=4"
 },
@@ -125,7 +151,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1928/thumb_1928.jpg",
 "trailer": "https://www.youtube.com/embed/IyPYBlC0XnM",
 "duration": 89,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1928/cover_1928.jpg",
 "link": "/movie_desc?id=5"
 },
@@ -138,7 +164,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1931/thumb_1931.jpg",
 "trailer": "https://www.youtube.com/embed/FcSTYf1L0jY",
 "duration": 130,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1931/cover_1931.jpg",
 "link": "/movie_desc?id=6"
 },
@@ -151,7 +177,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1787/thumb_1787.jpg",
 "trailer": "https://www.youtube.com/embed/i7NHFKbguYI",
 "duration": 90,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1787/cover_1787.jpg",
 "link": "/movie_desc?id=7"
 },
@@ -164,7 +190,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1908/thumb_1908.jpg",
 "trailer": "https://www.youtube.com/embed/HKLBp3fZ5zA",
 "duration": 103,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1908/cover_1908.jpg",
 "link": "/movie_desc?id=11"
 },
@@ -190,7 +216,7 @@ search all movie.
 "poster": "https://www.majorcineplex.com/uploads/movie/1804/thumb_1804.jpg",
 "trailer": "https://www.youtube.com/embed/0SDU6LlgdAw",
 "duration": 89,
-"status": "onshow",
+"status": "out",
 "cover": "https://www.majorcineplex.com/uploads/movie/1804/cover_1804.jpg",
 "link": "/movie_desc?id=9"
 },
