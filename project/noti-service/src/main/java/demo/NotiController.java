@@ -77,7 +77,7 @@ public class NotiController {
                                 "<h2>" + movie_name_th + "</h2>" +
                                 "<p>" + movie_description + "</p>" +
 
-                                "<p><a href= \"http://localhost:9001/movie_desc?id=" + each.getMovie_id() + "\">คลิ้กเพื่อดูรายละเอียด" + "</a></p>";
+                                "<p><a href= \"http://139.59.237.128:9001/movie_desc?id=" + each.getMovie_id() + "\">คลิ้กเพื่อดูรายละเอียด" + "</a></p>";
                         mimeMessage.setContent(htmlMsg, "text/html; charset=utf-8");
                         helper.setTo(email);
                         helper.setSubject(movie_name_en + "  is Showing Now");

@@ -13,6 +13,18 @@ Show all onshow movies.
 ```json
 [
 {
+"id": 1,
+"name_th": "รวมพันธุ์นักสู้พิทักษ์จักรวาล 2",
+"name_en": "Guardians Galaxy 2",
+"description": "เอาใจสาวกมาเวลด้วยภาพยนตร์ซุปเปอร์ฮีโร่สุดแปลกแหวกแนว Guardian of the Galaxy Vol.2 พบกับการร่วมตัวกันของเหล่าซุปเปอร์ฮีโร่ที่เราคุ้นหน้าคุ้นตากันดี ทั้ง “สตาร์ลอร์ด”, “กาโมร่า”, “แดร็ก”,”ร็อกเก็ต”, และที่ขาดไม่ได้ ฮีโร่สุดน่ารัก“เบบี้กรูท” และตัวละครอื่นๆอีกมากมายพร้อมพาคุณออกเดินทางไปในอวกาศกับภารกิจการกอบกู้จักรวาลครั้งใหม่ รวมถึงการค้นหาถึงชาติกำเนิดที่แท้จริงของ “ปีเตอร์ควิลล์” พระเอกหนุ่มขวัญใจสาวๆอีกด้วย",
+"release_date": "2017-05-09",
+"poster": "https://www.majorcineplex.com/uploads/movie/1737/thumb_1737.jpg",
+"trailer": "https://www.youtube.com/embed/duGqrYw4usE",
+"duration": 135,
+"status": "onshow",
+"cover": "https://www.majorcineplex.com/uploads/movie/1737/cover_1737.jpg"
+},
+{
 "id": 15,
 "name_th": "โดราเอมอน โนบิตะ ผู้กล้าแห่งอวกาศ",
 "name_en": "Doraemon: Nobita's Space Heroes",
@@ -47,18 +59,6 @@ Show all onshow movies.
 "duration": 130,
 "status": "onshow",
 "cover": "https://www.majorcineplex.com/uploads/movie/1930/cover_1930.jpg"
-},
-{
-"id": 1,
-"name_th": "รวมพันธุ์นักสู้พิทักษ์จักรวาล 2",
-"name_en": "Guardians Galaxy 2",
-"description": "เอาใจสาวกมาเวลด้วยภาพยนตร์ซุปเปอร์ฮีโร่สุดแปลกแหวกแนว Guardian of the Galaxy Vol.2 พบกับการร่วมตัวกันของเหล่าซุปเปอร์ฮีโร่ที่เราคุ้นหน้าคุ้นตากันดี ทั้ง “สตาร์ลอร์ด”, “กาโมร่า”, “แดร็ก”,”ร็อกเก็ต”, และที่ขาดไม่ได้ ฮีโร่สุดน่ารัก“เบบี้กรูท” และตัวละครอื่นๆอีกมากมายพร้อมพาคุณออกเดินทางไปในอวกาศกับภารกิจการกอบกู้จักรวาลครั้งใหม่ รวมถึงการค้นหาถึงชาติกำเนิดที่แท้จริงของ “ปีเตอร์ควิลล์” พระเอกหนุ่มขวัญใจสาวๆอีกด้วย",
-"release_date": "2017-05-02",
-"poster": "https://www.majorcineplex.com/uploads/movie/1737/thumb_1737.jpg",
-"trailer": "https://www.youtube.com/embed/duGqrYw4usE",
-"duration": 135,
-"status": "onshow",
-"cover": "https://www.majorcineplex.com/uploads/movie/1737/cover_1737.jpg"
 },
 {
 "id": 17,

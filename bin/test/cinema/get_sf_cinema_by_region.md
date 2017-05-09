@@ -183,7 +183,8 @@ find SF cinema in central region.
 "cinema_zone": "CEN",
 "cinema_tel": ""
 }
-]```
+]
+```
 
 ## `GET cinemas/sf/east`
 
