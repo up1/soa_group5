@@ -1,0 +1,19 @@
+=============== May 5, 2017 (+07) ===============
+18:30:03.874486 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:30:03.875095 db@open opening
+18:30:03.879291 version@stat F·[] S·0B[] Sc·[]
+18:30:03.879604 db@janitor F·2 G·0
+18:30:03.879627 db@open done T·4.517005ms
+=============== May 8, 2017 (+07) ===============
+18:48:19.602600 db@close closing
+18:48:19.602778 db@close done T·176.649µs
+=============== May 8, 2017 (+07) ===============
+18:48:21.759847 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:48:21.761147 version@stat F·[] S·0B[] Sc·[]
+18:48:21.761185 db@open opening
+18:48:21.761313 journal@recovery F·1
+18:48:21.762826 journal@recovery recovering @1
+18:48:21.766028 memdb@flush created L0@2 N·602 S·101KiB "\x04le\x021,v346":"\x14sc..ice,v439"
+18:48:21.766431 version@stat F·[1] S·101KiB[101KiB] Sc·[0.25]
+18:48:21.767295 db@janitor F·3 G·0
+18:48:21.767322 db@open done T·6.12519ms
